@@ -1,0 +1,113 @@
+.footer {
+  position: relative;
+  padding: 4rem 1.5rem 6rem;
+  background: #ffffff;
+  margin-top: 4rem;
+  border: 2px solid #f3f4f6;
+  border-radius: 24px;
+  overflow: hidden;
+  animation: fadeInUp 1s ease forwards;
+}
+.footer .footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2.5rem;
+  z-index: 2;
+  position: relative;
+}
+.footer .footer-col {
+  flex: 1 1 140px;
+  min-width: 140px;
+}
+.footer .footer-col.footer-description {
+  flex: 2 1 300px;
+  max-width: 320px;
+}
+.footer .footer-heading {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #111827;
+  line-height: 1.5;
+}
+.footer .footer-title {
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+.footer a {
+  color: #6b7280;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.footer a:hover {
+  color: #000;
+  transform: translateX(4px);
+}
+.footer .social-icons {
+  margin-top: 0.75rem;
+}
+.footer .social-icons .icon-btn {
+  background: #f3f4f6;
+  color: #111827;
+  margin-right: 0.5rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+.footer .social-icons .icon-btn:hover {
+  background: #e0e7ff;
+  transform: scale(1.1);
+}
+.footer .social-icons .icon-btn svg {
+  font-size: 1.25rem;
+}
+.footer .footer-bg-text {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  font-size: 10rem;
+  font-weight: 800;
+  color: rgb(255, 136, 0);
+  opacity: 1;
+  text-align: center;
+  animation: glowText 6s ease-in-out infinite alternate;
+  z-index: 1;
+  pointer-events: none;
+}
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes glowText {
+  0% {
+    letter-spacing: 0.2rem;
+    transform: scale(1);
+  }
+  50% {
+    letter-spacing: 0.4rem;
+    transform: scale(1.02);
+  }
+  100% {
+    letter-spacing: 0.2rem;
+    transform: scale(1);
+  }
+}
+@media (max-width: 768px) {
+  .footer .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  .footer .footer-bg-text {
+    font-size: 10rem;
+  }
+}/*# sourceMappingURL=Footer.css.map */

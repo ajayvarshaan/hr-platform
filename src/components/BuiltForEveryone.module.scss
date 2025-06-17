@@ -1,0 +1,214 @@
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section {
+  padding: 60px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.heading {
+  font-size: 2.5rem; // Increased from 10px
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.subheading {
+  font-size: 1.3rem;
+  margin-bottom: 40px;
+  color: #666;
+}
+
+/* NEW: Split layout into top 3 and bottom 2 */
+.cardRow {
+  display: grid;
+  gap: 24px;
+  margin-bottom: 40px;
+
+  &.topRow {
+    grid-template-columns: repeat(3, 1fr);
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+  }
+
+  &.bottomRow {
+    grid-template-columns: repeat(2, 1fr);
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+  }
+}
+
+.card {
+  background: #fff;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeInUp 0.7s ease forwards;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  h6 {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: black;
+    font-size: 1.1rem;
+  }
+
+  p,
+  .MuiTypography-body2 {
+    color: #555;
+    margin-bottom: 16px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Bar graph style */
+.compositeCardSet {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.blurredCard {
+  width: 30px;
+  height: 100px;
+  background: rgba(0, 123, 255, 0.1);
+  filter: blur(4px);
+  border-radius: 12px;
+}
+
+.centerCardSet {
+  background: #e3f2fd;
+  padding: 10px 14px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.barGraph {
+  display: flex;
+  gap: 6px;
+  align-items: flex-end;
+}
+
+.bar {
+  width: 12px;
+  background-color: #2196f3;
+  border-radius: 4px;
+}
+
+/* Wireframe column style */
+.wireframeColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.wireBox {
+  background: #eceff1;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 500;
+  color: #333;
+  width: 140px;
+  text-align: center;
+}
+
+/* Shield / Security icon style */
+.compositeInnerCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.blurred {
+  width: 30px;
+  height: 60px;
+  background: rgba(76, 175, 80, 0.1);
+  filter: blur(4px);
+  border-radius: 12px;
+}
+
+.centerCard {
+  background: #e8f5e9;
+  padding: 14px;
+  border-radius: 12px;
+}
+
+.securityIcon {
+  font-size: 48px;
+  color: #4caf50;
+}
+
+/* User info + performance */
+.userDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.userCard {
+  background: #f5f5f5;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  text-align: left;
+  color: #444;
+}
+
+.performanceGraph {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.performanceBar {
+  width: 12px;
+  background-color: #66bb6a;
+  border-radius: 4px;
+}
+
+/* Avatar layout */
+.circleWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  padding-top: 12px;
+}
+
+.circleAvatar {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}

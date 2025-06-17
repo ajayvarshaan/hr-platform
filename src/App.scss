@@ -1,0 +1,285 @@
+// Variables
+$font-primary: 'Poppins', 'Segoe UI', sans-serif;
+$headline-color: #1a1a1a;
+$subtext-color: #5f5f5f;
+$button-bg: linear-gradient(90deg, #ff7a5c, #ff4e50);
+$button-radius: 999px;
+$box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+$main-icon-bg: linear-gradient(145deg, #a78bfa, #7c3aed);
+$icon-size: 90px;
+
+// Global Styles
+img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+body {
+  margin: 0;
+  font-family: $font-primary;
+  background-color: #fff;
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+// Header
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 6%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: #ffffff;
+  backdrop-filter: blur(100px);
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(to right, #4f46e5, #9333ea);
+  border-image-slice: 1;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.9s ease-in-out;
+
+  .logo {
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: #000;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    svg {
+      margin-right: 0.5rem;
+      font-size: 1.6rem;
+      color: #000;
+    }
+
+    span {
+      font-weight: 400;
+    }
+
+    img {
+      width: 120px;
+      height: auto;
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav-actions {
+    display: flex;
+    gap: 1rem;
+
+    .sign-in {
+      font-size: 1rem;
+      color: #333;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .demo-button {
+      background: $button-bg;
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1.5rem;
+      border-radius: $button-radius;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 10px 24px rgba(255, 122, 92, 0.3);
+
+      &:hover {
+        background: linear-gradient(90deg, #ff4e50, #ff7a5c);
+        transform: translateY(-2px);
+      }
+    }
+  }
+}
+
+// Landing Container
+.landing-container {
+  margin-top: 0.5rem;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 2rem;
+  text-align: center;
+
+  .network {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    position: relative;
+    flex-wrap: wrap;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(to right, #ddd, #bbb);
+      z-index: 1;
+      transform: translateY(-50%);
+      border-radius: 2px;
+      animation: lineExpand 1s ease-in-out;
+    }
+
+    .icon-box {
+      width: $icon-size;
+      height: $icon-size;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: $box-shadow;
+      background: white;
+      z-index: 2;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+
+      &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+      }
+
+      &.main {
+        width: 110px;
+        height: 110px;
+        background: $main-icon-bg;
+        box-shadow: 0 16px 40px rgba(124, 58, 237, 0.4);
+
+        svg {
+          color: white;
+        }
+      }
+
+      &.yellow { background: #ffe066; }
+      &.blue { background: #74c0fc; }
+      &.red { background: #ff6b6b; }
+      &.gray { background: #f1f3f5; }
+      &.teal { background: #4dd0e1; }
+      &.green { background: #69f0ae; }
+      &.orange { background: #ffb74d; }
+
+      svg {
+        font-size: 40px;
+        color: #333;
+      }
+    }
+  }
+
+  .headline {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: $headline-color;
+    margin-bottom: 1.2rem;
+    animation: slideUp 1s ease;
+  }
+
+  .description {
+    font-size: 1.1rem;
+    max-width: 540px;
+    color: $subtext-color;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+    animation: fadeIn 1.4s ease;
+  }
+
+  .cta-button {
+    background: $button-bg;
+    border: none;
+    padding: 0.85rem 2.5rem;
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: $button-radius;
+    cursor: pointer;
+    box-shadow: 0 12px 24px rgba(255, 122, 92, 0.4);
+    transition: all 0.3s ease-in-out;
+    animation: fadeInUp 1.6s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      background: linear-gradient(90deg, #ff4e50, #ff7a5c);
+    }
+  }
+}
+
+// Animations
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes lineExpand {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .landing-container {
+    padding: 3rem 1rem;
+
+    .network {
+      flex-direction: column;
+      gap: 1.2rem;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    .headline {
+      font-size: 2.2rem;
+    }
+
+    .description {
+      font-size: 1rem;
+    }
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+
+    .nav-links,
+    .nav-actions {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+}
