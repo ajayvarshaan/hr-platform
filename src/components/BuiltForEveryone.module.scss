@@ -1,7 +1,7 @@
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(40px);
   }
   100% {
     opacity: 1;
@@ -9,9 +9,43 @@
   }
 }
 
+@keyframes scaleIn {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(0, 153, 255, 0.3);
+  }
+}
+
 .section {
   padding: 60px 16px;
-  background-color: #fafafa;
+  background: linear-gradient(135deg, #fff, #fff);
   text-align: center;
 }
 
@@ -19,13 +53,13 @@
   font-size: 2.25rem;
   font-weight: 700;
   margin-bottom: 10px;
-  color: #222;
+  color: #111;
 }
 
 .subheading {
   font-size: 1.2rem;
   margin-bottom: 40px;
-  color: #666;
+  color: #555;
 }
 
 .cardRow {
@@ -37,49 +71,53 @@
   &.topRow {
     grid-template-columns: repeat(3, 1fr);
     @media (max-width: 1024px) {
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     }
   }
 
   &.bottomRow {
     grid-template-columns: repeat(2, 1fr);
     @media (max-width: 768px) {
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     }
   }
 }
 
 .card {
-  background: #fff;
-  padding: 20px;
+  background: linear-gradient(145deg, #ffffff, #f3f3f3);
+  padding: 14px;
   border: 1px solid #ddd;
   border-radius: 14px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  animation: fadeInUp 0.6s ease forwards;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: bounceIn 0.5s ease-in-out;
+  transition: all 0.35s ease;
   text-align: center;
   height: 100%;
-  min-height: 280px;
+  min-height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
 
   &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+    transform: translateY(-6px) scale(1.03) rotateX(2deg) rotateY(2deg);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
     border-color: #bbb;
+    animation: pulseGlow 1.2s infinite;
   }
 
   .MuiTypography-body2 {
-    font-size: 0.9rem;
-    color: #555;
-    margin: 10px 0;
+    font-size: 0.82rem;
+    color: #444;
+    margin: 8px 0;
   }
 
   .cardTitle {
     font-weight: 600;
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: #222;
     margin-top: auto;
   }
@@ -90,15 +128,15 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 10px;
-  margin-bottom: 10px;
+  gap: 6px;
+  margin-bottom: 8px;
   width: 100%;
 }
 
 .blurredCardLeft,
 .blurredCardRight {
   flex: 1;
-  height: 100px;
+  height: 60px;
   background: rgba(0, 123, 255, 0.08);
   filter: blur(2px);
   border-radius: 14px;
@@ -106,7 +144,7 @@
 
 .centerCardSet {
   background: #e3f2fd;
-  padding: 10px 14px;
+  padding: 8px 10px;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -115,13 +153,13 @@
 
 .barGraph {
   display: flex;
-  gap: 5px;
+  gap: 4px;
   align-items: flex-end;
 }
 
 .bar {
-  width: 10px;
-  min-height: 24px;
+  width: 6px;
+  min-height: 20px;
   background-color: #2196f3;
   border-radius: 4px;
 }
@@ -129,14 +167,15 @@
 /* === SECOND CARD: Wireframe Circles === */
 .wireCircleContainer {
   position: relative;
-  width: 200px;
-  height: 200px;
-  margin: 0 auto 16px;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 12px;
+  animation: fadeInUp 0.6s ease forwards;
 }
 
 .wireCircle {
   position: absolute;
-  border: 1px solid #010a0e;
+  border: 1px dashed #010a0e;
   border-radius: 50%;
   top: 50%;
   left: 50%;
@@ -144,17 +183,17 @@
 }
 
 .wireCircle:nth-child(1) {
-  width: 140px;
-  height: 140px;
+  width: 100px;
+  height: 100px;
 }
 .wireCircle:nth-child(2) {
-  width: 170px;
-  height: 170px;
+  width: 120px;
+  height: 120px;
   opacity: 0.5;
 }
 .wireCircle:nth-child(3) {
-  width: 200px;
-  height: 200px;
+  width: 140px;
+  height: 140px;
   opacity: 0.3;
 }
 
@@ -166,12 +205,12 @@
   text-align: center;
 
   .centerIcon {
-    font-size: 32px;
+    font-size: 24px;
     color: #3949ab;
   }
 
   .overlayText {
-    font-size: 0.75rem;
+    font-size: 0.68rem;
     color: #666;
   }
 }
@@ -183,7 +222,7 @@
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-  padding-top: 20px;
+  padding-top: 14px;
 }
 
 .legalCardFlex {
@@ -191,25 +230,25 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 90px;
+  height: 70px;
   position: relative;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .legalMain {
   z-index: 2;
   background: #ede7f6;
-  padding: 14px;
+  padding: 10px;
   border-radius: 10px;
   height: 100%;
-  width: 70px;
+  width: 54px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .legalIcon {
-  font-size: 40px;
+  font-size: 28px;
   color: #6a1b9a;
 }
 
@@ -217,19 +256,19 @@
   background: rgba(103, 58, 183, 0.08);
   filter: blur(2px);
   height: 100%;
-  width: 40%;
+  width: 35%;
   border-radius: 10px;
 }
 
 /* === FOURTH CARD: Trainer List === */
 .userList {
   width: 100%;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
   text-align: left;
 
   .userListItem {
-    margin-bottom: 6px;
-    padding: 8px 12px;
+    margin-bottom: 5px;
+    padding: 6px 10px;
     background-color: #f4f6f8;
     border-radius: 8px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
@@ -240,63 +279,65 @@
 
     .name {
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       color: #2e2e2e;
     }
 
     .role {
-      font-size: 0.75rem;
+      font-size: 0.68rem;
       color: #616161;
     }
   }
 }
 
 .timeIcon {
-  font-size: 24px;
-  margin-bottom: 10px;
+  font-size: 20px;
+  margin-bottom: 6px;
   color: #00897b;
 }
 
 .performanceGraph {
   display: flex;
-  gap: 8px;
+  gap: 5px;
   align-items: flex-end;
   justify-content: center;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 .performanceBar {
-  width: 10px;
+  width: 6px;
   background-color: #66bb6a;
   border-radius: 3px;
+  height: 22px;
 }
 
 /* === FIFTH CARD: Avatar Circle Layout === */
 .circleWrapper {
   position: relative;
-  width: 180px;
-  height: 180px;
-  margin: 0 auto 16px;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 14px;
+  animation: scaleIn 0.5s ease-in-out;
 }
 
 .trophyIcon {
   position: absolute;
   top: 50%;
   left: 50%;
-  font-size: 30px;
+  font-size: 26px;
   color: #fbc02d;
   transform: translate(-50%, -50%);
   background-color: #fff;
   border-radius: 50%;
-  padding: 10px;
+  padding: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
   z-index: 2;
 }
 
 .circleAvatar {
   position: absolute;
-  width: 40px !important;
-  height: 40px !important;
+  width: 34px !important;
+  height: 48px !important;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #fff;
@@ -305,7 +346,7 @@
 }
 
 .circleAvatar:nth-child(1) {
-  top: 0%;
+  top: 1%;
   left: 50%;
   transform: translate(-50%, 0%);
 }
@@ -350,13 +391,13 @@
   }
 
   .card {
-    padding: 14px;
-    min-height: 240px;
+    padding: 10px;
+    min-height: 180px;
   }
 
   .wireCircleContainer,
   .circleWrapper {
-    width: 160px;
-    height: 160px;
+    width: 120px;
+    height: 120px;
   }
 }
