@@ -1,97 +1,137 @@
-import React from 'react';
-import { Box, Typography, Avatar } from '@mui/material';
-import ShieldIcon from '@mui/icons-material/Shield';
+import { Typography, Paper, Box } from '@mui/material';
 import styles from './BuiltForEveryone.module.scss';
+import BarChartIcon from '@mui/icons-material/BarChart';
+import GavelIcon from '@mui/icons-material/Gavel';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 
-const BuiltForEveryone: React.FC = () => {
+const BuiltForEveryone = () => {
   return (
-    <section className={styles.section}>
-      <Typography className={styles.heading}>Built for Everyone</Typography>
-      <Typography className={styles.subheading}>
-        Powerful features to support every team
+    <Box component="section" className={styles.section}>
+      <Typography variant="h4" className={styles.heading}>
+        Built for everyone
+      </Typography>
+      <Typography variant="body1" className={styles.subheading}>
+        Empower every team in your organization to thrive with modern workflows.
       </Typography>
 
-     
       <Box className={`${styles.cardRow} ${styles.topRow}`}>
-      
-        <Box className={styles.card}>
-          <Typography variant="h6">For HR Professionals</Typography>
-          <Typography variant="body2">Track team participation and HR info</Typography>
+        {/* HR Professionals */}
+        <Paper className={styles.card} elevation={0}>
           <Box className={styles.compositeCardSet}>
-            <Box className={styles.blurredCard}></Box>
+            <Box className={styles.blurredCardLeft} />
             <Box className={styles.centerCardSet}>
               <Box className={styles.barGraph}>
-                {[60, 90, 40, 100, 75].map((h, i) => (
-                  <Box key={i} className={styles.bar} style={{ height: `${h}px` }} />
-                ))}
+                <Box className={styles.bar} style={{ height: '80px', backgroundColor: '#8e24aa' }} />
+                <Box className={styles.bar} style={{ height: '100px', backgroundColor: '#3949ab' }} />
+                <Box className={styles.bar} style={{ height: '60px', backgroundColor: '#f44336' }} />
               </Box>
             </Box>
-            <Box className={styles.blurredCard}></Box>
+            <Box className={styles.blurredCardRight} />
           </Box>
-        </Box>
+          <Typography variant="h6" className={styles.cardTitle}>For HR professionals</Typography>
+          <Typography variant="body2">
+            Use a single cloud system for your employees, candidates and HR processes info.
+          </Typography>
+        </Paper>
 
-       
-        <Box className={styles.card}>
-          <Typography variant="h6">For Managers & Leaders</Typography>
-          <Typography variant="body2">Monitor company-wide stages</Typography>
-          <Box className={styles.wireframeColumn}>
-            {['Planning', 'Execution', 'Review'].map((stage, i) => (
-              <Box key={i} className={styles.wireBox}>{stage}</Box>
-            ))}
-          </Box>
-        </Box>
-
-        <Box className={styles.card}>
-          <Typography variant="h6">Security & Compliance</Typography>
-          <Typography variant="body2">For legal teams and data safety</Typography>
-          <Box className={styles.compositeInnerCard}>
-            <Box className={styles.blurred}></Box>
-            <Box className={styles.centerCard}>
-              <ShieldIcon className={styles.securityIcon} />
+        {/* Managers & Leaders */}
+        <Paper className={styles.card} elevation={0}>
+          <Box className={styles.wireCircleContainer}>
+            <Box className={styles.wireCircle} />
+            <Box className={styles.wireCircle} />
+            <Box className={styles.wireCircle} />
+            <Box className={styles.centerIconContent}>
+              <BarChartIcon className={styles.centerIcon} />
+              <Typography variant="caption" className={styles.overlayText}>
+                Make Data-Driven Decisions
+              </Typography>
             </Box>
-            <Box className={styles.blurred}></Box>
           </Box>
-        </Box>
+          <Typography variant="h6" className={styles.cardTitle}>For managers & leaders</Typography>
+          <Typography variant="body2">
+            Get always up-to-date data and monitor performance of the company.
+          </Typography>
+        </Paper>
+
+        {/* Legal Teams (UPDATED: Full side blur effect) */}
+        <Paper className={`${styles.card} ${styles.legalCardFull}`} elevation={0}>
+          <Box className={styles.legalCardFlex}>
+            <Box className={styles.legalBlurSide} />
+            <Box className={styles.legalMain}>
+              <GavelIcon className={styles.legalIcon} />
+            </Box>
+            <Box className={styles.legalBlurSide} />
+          </Box>
+          <Typography variant="h6" className={styles.cardTitle}>For legal teams</Typography>
+          <Typography variant="body2">
+            CoreShift helps legal teams by streamlining compliance, managing contracts and policies.
+          </Typography>
+        </Paper>
       </Box>
 
-   
       <Box className={`${styles.cardRow} ${styles.bottomRow}`}>
-      
-        <Box className={styles.card}>
-          <Typography variant="h6"> Employee Data</Typography>
-          <Typography variant="body2">See all your HR info in one place</Typography>
-          <Box className={styles.userDetails}>
-            <Box className={styles.userCard}>Name: Ajay Varshaan</Box>
-            <Box className={styles.userCard}>Role: Web Developer</Box>
-            <Box className={styles.userCard}>Joined: 2025</Box>
-          </Box>
-          <Box className={styles.performanceGraph}>
-            {[35, 70, 50, 85].map((height, idx) => (
-              <Box
-                key={idx}
-                className={styles.performanceBar}
-                style={{ height: `${height}px` }}
-              />
-            ))}
-          </Box>
-        </Box>
+        {/* Trainers / Educators */}
+      <Paper className={styles.card} elevation={0}>
+  {/* Main Trainer Info */}
+  <Box className={styles.userInfo}>
+    <Box className={styles.name}>Ajay Varshaan</Box>
+    <Box className={styles.role}>Trainer - L&D</Box>
+  </Box>
 
-        <Box className={styles.card}>
-          <Typography variant="h6">For Teams & Employees</Typography>
-          <Typography variant="body2">See who’s available and active</Typography>
-          <Box className={styles.circleWrapper}>
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((id) => (
-              <Avatar
-                key={id}
-                alt={`User ${id}`}
-                src={`/images/user${id}.jpg`}
-                className={styles.circleAvatar}
-              />
-            ))}
-          </Box>
-        </Box>
+  <AccessTimeIcon className={styles.timeIcon} />
+
+  {/* Graph Section */}
+  <Box className={styles.performanceGraph}>
+    <Box className={styles.performanceBar} style={{ height: '60px' }} />
+    <Box className={styles.performanceBar} style={{ height: '90px' }} />
+    <Box className={styles.performanceBar} style={{ height: '70px' }} />
+  </Box>
+
+  {/* Card Title and Description */}
+  <Typography variant="h6" className={styles.cardTitle}>
+    For trainers
+  </Typography>
+  <Typography variant="body2">
+    Analyze participation trends and evaluate training effectiveness easily.
+  </Typography>
+
+  {/* Additional Users List */}
+  <Box className={styles.userList}>
+    {[
+      { name: 'Surya', role: 'Assistant Trainer' },
+      { name: 'kavin', role: 'Training Coordinator' },
+      { name: 'lithish', role: 'Onboarding Specialist' },
+    ].map((user, idx) => (
+      <Box key={idx} className={styles.userListItem}>
+        <Typography className={styles.name}>{user.name}</Typography>
+        <Typography className={styles.role}>{user.role}</Typography>
       </Box>
-    </section>
+    ))}
+  </Box>
+</Paper>
+
+
+        {/* Employees */}
+       <Paper className={styles.card} elevation={0}>
+  <Box className={styles.circleWrapper}>
+    <EmojiEventsIcon className={styles.trophyIcon} />
+    {[...Array(6)].map((_, idx) => (
+      <img
+        key={idx}
+        src={`./images/user${idx + 1}.jpg`}
+        alt="user"
+        className={styles.circleAvatar}
+      />
+    ))}
+  </Box>
+  <Typography variant="h6" className={styles.cardTitle}>For employees</Typography>
+  <Typography variant="body2">
+    Motivate individuals and track progress toward performance goals.
+  </Typography>
+</Paper>
+      </Box>
+    </Box>
   );
 };
 

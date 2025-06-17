@@ -1,158 +1,166 @@
-.testimonial-section {
-  margin-top: -6rem;
+.testimonial-wrapper {
   text-align: center;
-  padding: 8rem 1rem 10rem; // Increased top and bottom spacing
-  background: linear-gradient(to bottom right, #fff, #fff);
-  overflow-x: hidden;
- 
+  padding: 4rem 1rem;
+  background: #fff;
+
   .heading {
-    font-size: 2.4rem;
-    font-weight: bold;
-    color: #123456;
+    font-size: 2.3rem;
+    font-weight: 700;
     margin-bottom: 0.5rem;
+    color: #202020;
   }
 
   .subheading {
     font-size: 1.1rem;
-    color: #5c6f82;
-    max-width: 640px;
-    margin: 0 auto 3rem;
+    color: #657582;
+    max-width: 650px;
+    margin: 0 auto 2.5rem;
   }
 
-  .envelope-wrapper {
+  .envelope-cover {
+    cursor: pointer;
+    margin: 2rem auto;
+    max-width: 400px;
+    height: 280px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    &:hover img {
+      transform: scale(1.04);
+    }
+  }
+
+  .carousel {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    position: relative;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    padding: 2rem 1rem;
 
-    .envelope-container {
-      position: relative;
-      width: 700px; // Same large envelope width
-      height: auto;
+    .nav-btn {
+      background: #ffffff;
+      border: 1px solid #e0e0e0;
+      width: 42px;
+      height: 42px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      transition: background 0.2s ease;
 
-      .envelope-image {
-        width: 70%;
-        border-radius: 20px;
-        cursor: pointer;
-        box-shadow: 0 14px 36px rgba(0, 0, 0, 0.25);
-        transition: transform 0.3s ease;
-        height: 200px;
-
-        &:hover {
-          transform: scale(1.02);
-        }
-      }
-
-      .testimonial-card {
-        position: absolute;
-        top: 14%;
-        left: 50%;
-        transform: translateX(-50%);
-        background: #fff;
-        width: 70%; // Reduced size of the card
-        border-radius: 16px;
-        padding: 1.2rem 1rem;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
-        z-index: 10;
-        text-align: left;
-        cursor: pointer;
-        transition: all 0.4s ease;
-
-        .card-top {
-          display: flex;
-          align-items: center;
-          gap: 0.9rem;
-
-          .profile-img {
-            width: 60px;
-            height: 60px;
-            border-radius: 10px;
-            object-fit: cover;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-          }
-
-          .info {
-            h3 {
-              margin: 0;
-              font-size: 1.1rem;
-              color: #1d3557;
-            }
-
-            .role {
-              font-size: 0.85rem;
-              color: #7b8a99;
-            }
-          }
-        }
-
-        .rating {
-          margin: 0.8rem 0 0.4rem;
-          font-size: 1.1rem;
-          color: #ffb703;
-
-          span {
-            font-size: 0.85rem;
-            margin-left: 0.4rem;
-            color: #333;
-          }
-        }
-
-        .review {
-          font-size: 0.9rem;
-          color: #34495e;
-          line-height: 1.4;
-          margin-top: 0.5rem;
-        }
+      &:hover {
+        background: #f0f0f0;
       }
     }
 
-    .btn-wrapper {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1.5rem;
-      margin-top: 3.5rem;
+    .cards-wrapper {
+      position: relative;
       width: 100%;
-      max-width: 700px;
-      padding: 0 1rem;
+      max-width: 380px;
+      height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      position: absolute;
+      width: 100%;
+      max-width: 360px;
+      padding: 1.6rem;
+      border-radius: 16px;
+      background: #fff;
+      text-align: center;
+      transition: all 0.5s ease;
+      opacity: 0;
+      transform: scale(0.6);
+      pointer-events: none;
+      cursor: pointer;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+
+      .avatar {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 0.7rem;
+      }
+
+      .name {
+        font-weight: 600;
+        margin-bottom: 0.2rem;
+      }
+
+      .role {
+        font-size: 0.9rem;
+        color: #6e7a89;
+        margin-bottom: 0.5rem;
+      }
+
+      .rating {
+        color: #ffa534;
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .review {
+        font-size: 0.95rem;
+        color: #2e2e2e;
+        line-height: 1.5;
+      }
+
+      &.active {
+        opacity: 1;
+        transform: scale(1) translateX(0);
+        z-index: 3;
+        pointer-events: auto;
+      }
+
+      &.prev {
+        opacity: 0.4;
+        transform: scale(0.85) translateX(-200px) rotate(-4deg);
+        filter: blur(1px);
+        z-index: 1;
+      }
+
+      &.next {
+        opacity: 0.4;
+        transform: scale(0.85) translateX(200px) rotate(4deg);
+        filter: blur(1px);
+        z-index: 1;
+      }
+
+      &.hidden {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .carousel {
+      flex-direction: column;
 
       .nav-btn {
-        background: #3366cc;
-        color: #fff;
-        font-size: 1.4rem;
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-        transition: background 0.3s, transform 0.2s;
-
-        &:hover {
-          background: #2348a2;
-          transform: scale(1.1);
-        }
-      }
-    }
-  }
-
-  // Responsive styles for smaller screens
-  @media (max-width: 768px) {
-    padding: 6rem 1rem 8rem;
-
-    .envelope-wrapper {
-      .envelope-container {
-        width: 92vw;
-
-        .testimonial-card {
-          width: 88%;
-          padding: 1rem;
-        }
+        display: none;
       }
 
-      .btn-wrapper {
-        margin-top: 2rem;
-        justify-content: center;
-        gap: 1rem;
-        max-width: 92vw;
+      .cards-wrapper {
+        height: auto;
+
+        .card {
+          position: relative;
+          transform: scale(1);
+          opacity: 1 !important;
+          z-index: 2;
+        }
+
+        .card.prev,
+        .card.next {
+          display: none;
+        }
       }
     }
   }
