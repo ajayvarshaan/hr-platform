@@ -47,6 +47,7 @@
   padding: 60px 16px;
   background: linear-gradient(135deg, #fff, #fff);
   text-align: center;
+   font-family: cursive, sans-serif;
 }
 
 .heading {
@@ -54,6 +55,7 @@
   font-weight: 700;
   margin-bottom: 10px;
   color: #111;
+ 
 }
 
 .subheading {
@@ -167,19 +169,22 @@
 /* === SECOND CARD: Wireframe Circles === */
 .wireCircleContainer {
   position: relative;
-  width: 140px;
-  height: 140px;
-  margin: 0 auto 12px;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 24px;
   animation: fadeInUp 0.6s ease forwards;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .wireCircle {
   position: absolute;
-  border: 1px solid #010a0e;
   border-radius: 50%;
-  top: 60%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border: 1px solid #010a0e;
 }
 
 .wireCircle:nth-child(1) {
@@ -202,7 +207,28 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+
+  .infoBox {
+    background: #f3f4f6;
+    padding: 8px 12px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    min-width: 90px;
+    font-size: 0.75rem;
+    color: #333;
+    font-weight: 500;
+    transition: background 0.3s;
+
+    &:hover {
+      background: #e8eaf6;
+    }
+  }
 
   .centerIcon {
     font-size: 24px;
@@ -210,10 +236,11 @@
   }
 
   .overlayText {
-    font-size: 0.68rem;
+    font-size: 0.7rem;
     color: #666;
   }
 }
+
 
 /* === THIRD CARD: Legal Blur Side === */
 .legalCardFull {
