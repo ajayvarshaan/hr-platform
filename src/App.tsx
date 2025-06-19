@@ -26,9 +26,9 @@ import Footer from './components/Footer';
 const App: React.FC = () => {
   return (
     <Box className="app">
-      <AppBar position='sticky' color="transparent" elevation={0} className="header">
+      <AppBar position='sticky' color='default' elevation={0} className="header">
         <Toolbar className="toolbar">
-          <Typography variant="h6" className="logo">
+          <Typography variant="h6" className="logo">  
             CoreShift
           </Typography>
           <Box className="nav-links">

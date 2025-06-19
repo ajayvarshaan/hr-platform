@@ -7,8 +7,8 @@ import './HeroSection.scss';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const leftImages = ['/images/user1.jpg', '/images/user2.jpg', '/images/user3.jpg', '/images/user4.jpg'];
-const rightImages = ['/images/user4.jpg', '/images/user5.jpg', '/images/user6.jpg', '/images/user3.jpg'];
+const leftImages = ['/images/user1.jpg', '/images/user2.jpg', '/images/user3.jpg', '/images/user7.jpg'];
+const rightImages = ['/images/user4.jpg', '/images/user5.jpg', '/images/user6.jpg', '/images/user8.jpg'];
 
 const HeroSection: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);

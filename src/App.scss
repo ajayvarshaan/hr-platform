@@ -26,8 +26,6 @@ body {
   align-items: center;
   justify-content: center;
 }
-
-// Header
 .header {
   margin-top: 20px;
   display: flex;
@@ -37,12 +35,12 @@ body {
   position: fixed;
   top: 1.5rem;
   left: 50%;
-  transform: translateX(300px);
+  transform: translateX(27%);
   z-index: 1000;
   background-color: whitesmoke;
   backdrop-filter: blur(100px);
   border: 2px solid gray;
-  border-radius: 999px;
+  border-radius: 25px; // updated to have curved top/bottom, flat sides
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
   font-family: 'Inter', system-ui, sans-serif;
   width: 72%;
@@ -63,7 +61,6 @@ body {
   }
 
   .nav-links {
-    display: flex;
     gap: 1.5rem;
     margin-left: 1.5rem;
 
@@ -85,6 +82,7 @@ body {
     display: flex;
     gap: 0.8rem;
     margin-left: auto;
+    border-radius: 20px;
 
     .sign-in {
       font-size: 0.88rem;
@@ -121,8 +119,6 @@ body {
     }
   }
 }
-
-
 
 
 // Landing Container
