@@ -82,6 +82,7 @@ const TestimonialSlider: React.FC = () => {
       {!isOpen ? (
         <Box className="envelope-cover" onClick={handleToggle}>
           <img src="/images/envalope-close.jpg" alt="Envelope Closed" />
+        
         </Box>
       ) : (
         <Box className="carousel">

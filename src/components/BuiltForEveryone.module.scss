@@ -57,6 +57,7 @@
 
 // Base Styles
 .section {
+  margin-top: -3rem;
   padding: 100px 16px 80px 16px;
   background: linear-gradient(120deg, #fff , #fff );
   text-align: center;
@@ -77,9 +78,9 @@
 }
 
 .heading {
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 900;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   color:  #000009;
   background:  #000009;
   -webkit-background-clip: text;
@@ -97,7 +98,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 36px;
-  margin-bottom: 36px;
+  margin-bottom: 5px;
   z-index: 2;
   position: relative;
   @media (max-width: 1024px) {
@@ -373,7 +374,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   transition: all 0.4s ease;
-
+margin-top: 1rem;
   &:hover {
     border-color: rgba(59, 130, 246, 0.6);
     box-shadow: 0 0 24px 4px #a5b4fc44;
@@ -381,21 +382,21 @@
 }
 
 .wireCircle:nth-child(1) {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   animation: pulse 3s ease-in-out infinite;
 }
 
 .wireCircle:nth-child(2) {
-  width: 190px;
-  height: 190px;
+  width: 240px;
+  height: 240px;
   opacity: 0.7;
   animation: pulse 3s ease-in-out infinite 0.5s;
 }
 
 .wireCircle:nth-child(3) {
-  width: 230px;
-  height: 230px;
+  width: 280px;
+  height: 280px;
   opacity: 0.4;
   animation: pulse 3s ease-in-out infinite 1s;
 }
@@ -492,7 +493,37 @@
   width: 410px;
   border-radius: 3px;
   margin-top: 0rem;
-  
+
+  // Vertical straight lines background from top to middle, spaced by gaps
+  &::before {
+    content: '';
+    position: absolute;
+    top: 2;
+    left: 0;
+    width: 100%;
+    height: 60%; 
+    z-index: 0;
+    pointer-events: none;
+    background:
+      repeating-linear-gradient(
+        to right,
+        transparent 0 20.5%,
+         rgba(3, 0, 8, 0.18) 19%,
+         rgba(3, 0, 8, 0.18) 21%,
+        transparent 21% 40.5%,
+         rgba(3, 0, 8, 0.18) 39%,
+         rgba(3, 0, 8, 0.18) 41%,
+        transparent 41% 60.5%,
+        rgba(3, 0, 8, 0.18) 59%,
+        rgba(3, 0, 8, 0.18) 61%,
+        transparent 61% 80.5%,
+        rgba(3, 0, 8, 0.18) 79%,
+        rgba(3, 0, 8, 0.18) 81%,
+        transparent 81% 100%
+      );
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
 
   &:hover {
     transform: translateY(-10px) scale(1.03);
@@ -595,10 +626,10 @@
 }
 
 .legalCardTitle {
-  font-weight: 800;
-  font-size: 1.45rem;
+  font-weight: 100%;
+  font-size: 1.50rem;
   color:  #000009;
-  margin: 0 0 22px;
+  margin: 10px 0 30px;
   position: relative;
   text-align: center;
   width: 100%;
@@ -923,7 +954,7 @@
 
 // Employees Card
 .employeeHeader {
-  margin-bottom: 18px;
+  margin-bottom: 30x;
   text-align: center;
 }
 
@@ -971,7 +1002,39 @@
   margin: 0 auto 28px;
   border-radius: 50%;
   background: linear-gradient(145deg, #f8f9fa, #e0e7ff 100%);
-  box-shadow: 0 6px 24px rgba(59, 130, 246, 0.10), inset 0 0 0 2px #a5b4fc33;
+  box-shadow: 0 6px 24px rgba(59, 130, 246, 0.1), inset 0 0 0 2px #a5b4fc33;
+}
+
+.avatarsOrbit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: 50% 50%;
+}
+
+.avatarContainer {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  transition: all 0.3s ease;
+  z-index: 2;
+
+  &:hover {
+    transform: translate(-50%, -50%) scale(1.13);
+    z-index: 3;
+    box-shadow: 0 4px 16px #a5b4fc55;
+  }
+}
+
+.circleAvatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2.5px solid #fff;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.13);
 }
 
 .centerBadge {
@@ -990,11 +1053,12 @@
   z-index: 1;
 
   .trophyIcon {
-    color:  #000009;
+    color: #000009;
     font-size: 32px;
     filter: drop-shadow(0 2px 8px #fbbf24aa);
   }
 }
+
 
 .avatarContainer {
   position: absolute;
