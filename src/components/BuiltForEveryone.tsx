@@ -18,6 +18,7 @@ const BuiltForEveryone = () => {
         color='black'
         className={styles.subheading}
         align="center"
+        margin-top="10px"
       >
         Empower every team in your organization to thrive with modern workflows.
       </Typography>
@@ -123,7 +124,7 @@ const BuiltForEveryone = () => {
             </React.Fragment>
           ))}
           <Typography variant="h6" className={styles.legalCardTitle}>
-            For Legal Teams
+           <strong color='black'>For Legal Teams</strong>
           </Typography>
           <Typography variant="body2" className={styles.legalCardText}>
             CoreShift helps legal teams by streamlining compliance, managing contracts and policies.

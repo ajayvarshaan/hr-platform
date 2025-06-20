@@ -7,14 +7,22 @@
   border-radius: 24px;
   overflow: hidden;
   animation: fadeInUp 1s ease forwards;
+  margin-top: -1rem;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 3rem; // extra space at bottom
+  }
 
   .footer-content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 1.5rem;
     z-index: 2;
     position: relative;
+    margin-top: -30px;
   }
 
   .footer-col {
@@ -24,6 +32,52 @@
     &.footer-description {
       flex: 2 1 300px;
       max-width: 320px;
+    }
+
+    &.footer-resources-follow {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+
+      .footer-resources {
+        order: 1;
+        flex: 1 1 100px;
+        min-width: 120px;
+      }
+
+      .footer-social {
+        order: 2;
+        flex: 1 1 120px;
+        min-width: 120px;
+
+        .footer-title {
+          margin-bottom: 0.75rem;
+        }
+
+        .social-icons {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          margin-top: 0;
+
+          .icon-btn {
+            background: #f3f4f6;
+            color: #111827;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            padding: 0.4rem;
+
+            &:hover {
+              background: #e0e7ff;
+              transform: scale(1.1);
+            }
+
+            svg {
+              font-size: 1.25rem;
+            }
+          }
+        }
+      }
     }
   }
 
@@ -53,40 +107,9 @@
     }
   }
 
-  // ✅ New "Follow Us" column
-  .footer-social {
-    .footer-title {
-      margin-bottom: 0.75rem;
-    }
-
-    .social-icons {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-top: 0;
-
-      .icon-btn {
-        background: #f3f4f6;
-        color: #111827;
-        border-radius: 12px;
-        transition: all 0.3s ease;
-        padding: 0.4rem;
-
-        &:hover {
-          background: #e0e7ff;
-          transform: scale(1.1);
-        }
-
-        svg {
-          font-size: 1.25rem;
-        }
-      }
-    }
-  }
-
   .footer-bg-text {
     position: absolute;
-    bottom: -10px;
+    bottom: -20px;
     left: 0;
     right: 0;
     font-size: 10rem;
@@ -136,8 +159,21 @@
       font-size: 10rem;
     }
 
-    .social-icons {
-      justify-content: flex-start;
+    .footer-col.footer-resources-follow {
+      flex-direction: column;
+      gap: 1.5rem;
+
+      .footer-resources {
+        order: 1;
+      }
+
+      .footer-social {
+        order: 2;
+      }
+
+      .social-icons {
+        justify-content: flex-start;
+      }
     }
   }
 }

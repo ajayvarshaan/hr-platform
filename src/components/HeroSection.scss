@@ -1,85 +1,109 @@
 .hero-section {
   position: relative;
+  width: 100vw;
+  min-height: 130vh;
+  background: linear-gradient(145deg, #fff, #fff);
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 6rem 2rem;
-  background: linear-gradient(145deg, #fff, #ffffff);
+  align-items: center;
   overflow: hidden;
-  flex-wrap: wrap;
-  gap: 4rem;
 
-  .profile-curve {
-    position: relative;
-    width: 200px;
-    height: 600px;
+  .image-track {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    pointer-events: none;
+  }
 
-    .img {
-      position: absolute;
-      width: 90px;
-      height: 120px;
-      border-radius: 20px;
+  .left-track {
+    left: 0.3px;
+  }
+
+  .right-track {
+    right: 10px;
+  }
+
+  .profile-card {
+    position: absolute;
+    width: 120px;
+    height: 150px;
+    border-radius: 16px;
+    padding: 6px;
+    background: #fff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    offset-rotate: 0deg;
+    animation: moveAlongPath 16s linear infinite;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
       object-fit: cover;
-      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-      opacity: 0.85;
-      animation: floatY 5s ease-in-out infinite;
-      z-index: 2;
+    }
 
-      &:hover {
-        transform: scale(1.05) rotate(2deg);
-        z-index: 3;
-      }
+    &:hover {
+      transform: scale(1.05);
+      z-index: 2;
     }
   }
 
-  .left-curve {
-    margin-right: 2rem;
-
-    .img-0 { top: 0%; left: 0%; transform: rotate(-15deg); animation-delay: 0s; }
-    .img-1 { top: 25%; left: 30%; transform: rotate(-10deg); animation-delay: 0.2s; }
-    .img-2 { top: 55%; left: 35%; transform: rotate(0deg); animation-delay: 0.4s; }
-    .img-3 { top: 85%; left: 0%; transform: rotate(10deg); animation-delay: 0.6s; }
+  .left-img {
+    offset-path: path("M100,0 C500,350 500,650 100,1000"); // more pronounced C curve
   }
 
-  .right-curve {
-    margin-left: 2rem;
+  .right-img {
+    offset-path: path("M40,0 C-360,350 -360,650 40,1000"); // more pronounced mirrored C curve
+  }
 
-    .img-0 { top: 0%; right: 0%; transform: rotate(15deg); animation-delay: 0.1s; }
-    .img-1 { top: 25%; right: 30%; transform: rotate(10deg); animation-delay: 0.3s; }
-    .img-2 { top: 55%; right: 35%; transform: rotate(0deg); animation-delay: 0.5s; }
-    .img-3 { top: 85%; right: 10%; transform: rotate(-10deg); animation-delay: 0.7s; }
+  @keyframes moveAlongPath {
+    0% {
+      offset-distance: 0%;
+      opacity: 0;
+    }
+    5% {
+      opacity: 1;
+    }
+    95% {
+      opacity: 1;
+    }
+    100% {
+      offset-distance: 100%;
+      opacity: 0;
+    }
   }
 
   .hero-content {
-    text-align: center;
-    max-width: 500px;
-    padding: 1rem;
     z-index: 5;
+    text-align: center;
+    max-width: 600px;
+    padding: 2rem;
 
     .hero-icon {
       width: 64px;
       height: 64px;
       background: #f2edff;
       border-radius: 16px;
-      margin: 0 auto 1.5rem;
       display: flex;
       justify-content: center;
       align-items: center;
+      margin: 0 auto 1.5rem;
       box-shadow: 0 6px 12px rgba(155, 109, 255, 0.2);
     }
 
     .hero-title {
       font-weight: 800;
-      font-size: 2.8rem;
-      line-height: 1.2;
-      color: #202020;
+      font-size: 3rem;
+      color: #1a1a1a;
       margin-bottom: 1rem;
     }
 
     .hero-description {
-      font-size: 1.05rem;
-      color: #555;
+      font-size: 1.2rem;
+      color: #444;
       margin-bottom: 2rem;
       line-height: 1.6;
     }
@@ -91,7 +115,7 @@
       padding: 0.75rem 2.5rem;
       font-weight: 600;
       font-size: 1rem;
-      box-shadow: 0 10px 20px rgba(155, 109, 255, 0.3);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease;
 
       &:hover {
@@ -101,42 +125,17 @@
     }
   }
 
- 
   @media (max-width: 768px) {
-    flex-direction: column;
-    padding: 3rem 1rem;
-
-    .profile-curve {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      width: 100%;
-      height: auto;
-      margin: 1.5rem 0;
-
-      .img {
-        position: static;
-        transform: none !important;
-        animation: none;
-        margin: 0.5rem;
-      }
+    .image-track {
+      display: none;
     }
 
-    .left-curve, .right-curve {
-      margin: 0;
+    .hero-title {
+      font-size: 2rem;
     }
 
-    .hero-content {
-      .hero-title {
-        font-size: 2rem;
-      }
+    .hero-description {
+      font-size: 1rem;
     }
   }
-}
-
-// Floating animation
-@keyframes floatY {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-  100% { transform: translateY(0); }
 }

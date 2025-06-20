@@ -71,7 +71,6 @@
     transform: translateX(-50%);
     width: 80vw;
     height: 300px;
-    background: radial-gradient(circle, #a5b4fc33 0%, transparent 80%);
     z-index: 0;
     pointer-events: none;
   }
@@ -80,7 +79,7 @@
 .heading {
   font-size: 2.8rem;
   font-weight: 900;
-  margin-bottom: 18px;
+  margin-bottom: 25px;
   color:  #000009;
   background:  #000009;
   -webkit-background-clip: text;
@@ -138,7 +137,7 @@
   overflow: hidden;
   z-index: 2;
   animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  margin: 0 0 28px 0;
+  margin: 15px 0 28px 0;
 
   // Top 3 and Bottom 2 layout
   @media (max-width: 1200px) {
@@ -221,7 +220,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  width: calc(100% + 48px);
+  width: calc(110% + 48px);
   margin: 0 -24px 18px -24px;
   height: 220px;
   position: relative;
@@ -232,27 +231,27 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 30%;
+  width: 33%;
   height: 100%;
-  filter: blur(2.5px);
   z-index: 1;
-  opacity: 0.7;
+  opacity: 1;
+  pointer-events: none;
 }
 
 .blurredCardLeft {
   left: -60px;
-  background: linear-gradient(90deg, 
-    rgba(142, 36, 170, 0.18) 0%, 
-    rgba(142, 36, 170, 0.11) 50%,
-    rgba(142, 36, 170, 0) 100%);
+  background: linear-gradient(90deg,
+    rgba(6, 0, 7, 0.38) 0%,
+    rgba(3, 0, 4, 0.22) 50%,
+    rgba(11, 0, 15, 0) 100%);
 }
 
 .blurredCardRight {
   right: -60px;
-  background: linear-gradient(90deg, 
-    rgba(0, 0, 0, 0) 0%,
-    rgba(57, 73, 171, 0.11) 50%,
-    rgba(57, 73, 171, 0.18) 100%);
+  background: linear-gradient(270deg,
+    rgba(6, 0, 7, 0.38) 0%,
+    rgba(3, 0, 4, 0.22) 50%,
+    rgba(11, 0, 15, 0) 100%);
 }
 
 .centerCardSet {
@@ -265,7 +264,7 @@
   width: 44%;
   max-width: 320px;
   height: 200px;
-  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.10);
+  
   transition: all 0.4s ease;
   border: 1.5px solid rgba(139, 92, 246, 0.13);
   z-index: 2;
