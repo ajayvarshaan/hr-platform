@@ -14,7 +14,7 @@ const rightImages = [
   '/images/user5.jpg',
   '/images/user6.jpg',
   '/images/user7.jpg',
- 
+
 ];
 
 const HeroSection: React.FC = () => {
