@@ -112,15 +112,15 @@
     bottom: -20px;
     left: 0;
     right: 0;
-    font-size: 10rem;
-    font-weight: 800;
-    color: rgb(255, 136, 0);
-    opacity: 1;
-    text-align: center;
-    animation: glowText 6s ease-in-out infinite alternate;
-    z-index: 1;
-    pointer-events: none;
-  }
+  font-size: 10rem;
+  font-weight: 800;
+  color: #f46e50;
+  opacity: 1;
+  text-align: center;
+  animation: glowText 6s ease-in-out infinite alternate;
+  z-index: 1;
+  pointer-events: none;
+}
 
   @keyframes fadeInUp {
     0% {
