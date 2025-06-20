@@ -21,8 +21,6 @@ import IntegrationSection from './components/IntegrationSection';
 import TestimonialSlider from './components/TestimonialSlider';
 import Footer from './components/Footer';
 
-
-
 const App: React.FC = () => {
   return (
     <Box className="app">
