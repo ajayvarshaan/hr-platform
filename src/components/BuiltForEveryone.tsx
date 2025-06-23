@@ -4,9 +4,10 @@ import BarChartIcon from '@mui/icons-material/BarChart';
 
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
-import GavelIcon from '@mui/icons-material/Gavel';
+
 import gsap from 'gsap';
 import styles from './BuiltForEveryone.module.scss';
+import BalanceIcon from '@mui/icons-material/Balance';
 
 const BuiltForEveryone = () => {
   const orbitRef = useRef<HTMLDivElement>(null);
@@ -92,11 +93,11 @@ const BuiltForEveryone = () => {
           <Box className={styles.legalCardFlex} >
             <Box className={styles.legalBlurSide} style={{ left: 0 }} />
             <Box className={styles.legalMain}>
-              <Box className={styles.legalIconWrapper}>
-              <GavelIcon className={styles.legalIcon} />
-              <Box className={styles.legalIconBg} />
-              <Box className={styles.legalIconGlow} />
-              </Box>
+             <Box className={styles.legalIconWrapper}>
+  <BalanceIcon className={styles.legalIcon} />
+  <Box className={styles.legalIconBg} />
+  <Box className={styles.legalIconGlow} />
+</Box>
             </Box>
             <Box className={styles.legalBlurSide} style={{ right: 0 }} />
           </Box>
@@ -111,10 +112,11 @@ const BuiltForEveryone = () => {
       {/* Bottom Row - Modified layout */}
       <Box className={styles.bottomRow } >
         {/* All Employee Data - Wider and Aligned */}
-      <Paper className={`${styles.cardSmall} ${styles.employeeDataCard}`} elevation={0}>
+      <Paper className={`${styles.cardBig} ${styles.employeeDataCard}`} elevation={0}>
            <Box className={styles.userInfo} marginTop={-2.5}>
         <Typography className={styles.name}>Ajay Varshaan</Typography>
         <Typography className={styles.role}>Trainer - L&D</Typography>
+        
       </Box>
       
     
@@ -133,14 +135,11 @@ const BuiltForEveryone = () => {
           ))}
         </Box>
       </Box>
-      <Box><Typography variant='body2' marginTop={5}>Contact and personal information, paid and unpaid leave balances, career history, projects and more.</Typography></Box>
-        <Typography variant="h6" className={styles.cardTitle} marginTop={1.5}>
-          <strong>All employee data</strong>
+
+       
+        <Typography variant="h6" className={styles.cardTitle} bottom={-78} margin={7}>
+           <strong >All employee data at once</strong>
         </Typography>
-     
-
-  
-
       <Box className={styles.cardContent}>
       
 
@@ -158,7 +157,7 @@ const BuiltForEveryone = () => {
             <Box className={styles.avatarsOrbit} ref={orbitRef}>
               {[...Array(6)].map((_, idx) => {
                 const angle = (idx * 60) * (Math.PI / 180);
-                const radius = 80;
+                const radius = 85;
                 const x = radius * Math.cos(angle);
                 const y = radius * Math.sin(angle);
                 return (

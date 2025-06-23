@@ -1,8 +1,8 @@
 .hero-section {
   position: relative;
   width: 100vw;
-  min-height: 100vh;
- background-color: rgb(225, 220, 220);
+  min-height: 70vh;
+  background-color: rgb(188, 184, 184);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,7 +12,7 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 140px;
+    width: 100px;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -52,13 +52,12 @@
   }
 
   .left-img {
-    offset-path: path("M00,200 C500,350 500,650 100,1000,"); // more pronounced C curve
+    offset-path: path("M00,0 C500,350 500,650 100,1000,"); // more pronounced C curve
   }
 
   .right-img {
-    offset-path: path("M40,200 C-360,350 -360,350 40,1000"); // more pronounced mirrored C curve
+    offset-path: path("M40,0 C-360,350 -360,650 40,1000"); // more pronounced mirrored C curve
   }
-
   @keyframes moveAlongPath {
     0% {
       offset-distance: 0%;

@@ -56,6 +56,7 @@ const App: React.FC = () => {
           <Box className="icon-box gray"><VisibilityIcon /></Box>
           <Box className="icon-box green"><SupportAgentIcon /></Box>
           <img src="/images/user2.jpg" alt="User 2" />
+          
         </Box>
 
         <Typography variant="h3" className="headline">

@@ -18,7 +18,7 @@ export default function Footer() {
           <Box className="footer-col">
             <Typography className="footer-title">Product</Typography>
             <Stack spacing={1}>
-              <Link href="#">CoreHR</Link>
+              <Link href="#" >CoreHR</Link>
               <Link href="#">Recruit</Link>
               <Link href="#">Perform</Link>
               <Link href="#">Pulse</Link>
