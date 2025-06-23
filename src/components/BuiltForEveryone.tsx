@@ -66,8 +66,9 @@ const BuiltForEveryone = () => {
             <Box className={styles.blurredCardRight} />
            
           </Box>
-          <Box><Typography variant='body2' margin={3} width={-1}>  Use a single cloud system for your employees, candidates and HR processes info.</Typography></Box> 
-          <Typography variant="h6" className={styles.cardTitle} marginTop={-3} width={1}><strong>For HR professionals</strong></Typography>
+          <Typography variant="h6" className={styles.cardTitle} margin={6} width={1}><strong>For HR professionals</strong></Typography>
+          <Box><Typography variant='body2' marginTop={-5} width={-1}>  Use a single cloud system for your employees, candidates and HR processes info.</Typography></Box> 
+          
          
         </Paper>
 
@@ -83,8 +84,9 @@ const BuiltForEveryone = () => {
               <Typography variant="caption" className={styles.overlayText} >Access real time insights</Typography>
             </Box>
           </Box>
-          <Box><Typography marginTop={16.7} variant='body2'>Get always up-to-date data and monitor performance of the company.</Typography></Box>
-          <Typography variant="h6" className={styles.cardTitle} margin={2} width={1}><strong>For managers & leaders</strong></Typography>
+           <Typography variant="h6" className={styles.cardTitle} margin={20} width={1}><strong>For managers & leaders</strong></Typography>
+          <Box><Typography marginTop={-19} variant='body2'>Get always up-to-date data and monitor performance of the company.</Typography></Box>
+         
          
         </Paper>
 
@@ -101,8 +103,9 @@ const BuiltForEveryone = () => {
             </Box>
             <Box className={styles.legalBlurSide} style={{ right: 0 }} />
           </Box>
-          <Box><Typography variant='body2' marginTop={18.3}>CoreShift helps legal teams by streamlining compliance, managing contracts and policies.</Typography></Box>
-          <Typography variant="h6" className={styles.legalCardTitle} marginTop={2.5} ><strong>For Legal Teams</strong></Typography>
+           <Typography variant="h6" className={styles.legalCardTitle} marginTop={22.5} ><strong>For Legal Teams</strong></Typography>
+          <Box><Typography variant='body2' marginTop={0.5}>CoreShift helps legal teams by streamlining compliance, managing contracts and policies.</Typography></Box>
+         
          
           
       
@@ -136,10 +139,11 @@ const BuiltForEveryone = () => {
         </Box>
       </Box>
 
-       
-        <Typography variant="h6" className={styles.cardTitle} bottom={-78} margin={7}>
+      
+        <Typography variant="h6" className={styles.cardTitle} bottom={-55} margin={5} height={45}>
            <strong >All employee data at once</strong>
         </Typography>
+         <Typography variant='body2' marginTop={3}>Contact and personal information, paid and unpaid leave balances, career history, projects and more.</Typography>
       <Box className={styles.cardContent}>
       
 
@@ -180,9 +184,9 @@ const BuiltForEveryone = () => {
               })}
             </Box>
           </Box>
-         
-             <Box><Typography variant='body2' marginTop={31}>Stay informed about upcoming events and know who will be out of office in advance,Track upcoming events and out-of-office schedules effortlessly,</Typography></Box>
-            <Typography variant="h6" className={styles.cardTitle} marginTop={1.5}><strong>For teams & employees</strong></Typography>
+          <Typography variant="h6" className={styles.cardTitle} marginTop={36}><strong>For teams & employees</strong></Typography>
+             <Box><Typography variant='body2' marginTop={1}>Stay informed about upcoming events and know who will be out of office in advance,Track upcoming events and out-of-office schedules effortlessly,</Typography></Box>
+            
         </Card>
       </Box>
     </Box>

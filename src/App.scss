@@ -19,7 +19,7 @@ img {
 body {
   margin: 0;
   font-family: $font-primary;
-  background-color: rgb(188, 184, 184);
+  background-color: rgb(242,244,245);
   scroll-behavior: smooth;
   display: flex;
   flex-direction: column;
@@ -38,7 +38,7 @@ body {
 }
 .header {
   margin-top: 20px;
-  background-color: #fff;
+  background-color: rgb(255,255,255);
   border: 2px solid rgb(9, 0, 0);
   border-radius: 25px; // updated to have curved top/bottom, flat sides
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);

@@ -65,15 +65,19 @@ const IntegrationSection: React.FC = () => {
         <Box className="top-icon">
           <img src="/icons/settings.png" alt="settings" />
         </Box>
-        <Typography className="headline">
+        <Typography
+          className="headline"
+          fontFamily='"Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif'
+        >
           Integrate with your existing tools
         </Typography>
 
         <Box className="arc-container">
-          <svg width="100%" height="300" viewBox="0 0 700 300">
+          <svg width="100%" height="300" viewBox="50 100 700 300">
             <path
               ref={pathRef}
-              d="M 50 250 Q 350 20 650 250"
+              d="M 100 280 Q 550 150 1000 280"
+
               fill="none"
               stroke="transparent"
             />

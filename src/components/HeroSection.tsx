@@ -22,10 +22,12 @@ const HeroSection: React.FC = () => {
     <Box className="hero-section">
       {/* SVG paths to define motion paths */}
       <svg width="0" height="0">
-        <defs>
-          <path id="leftPath" d="M100,0 C200,300 200,700 100,1000" />
-          <path id="rightPath" d="M100,0 C0,300 0,700 100,1000" />
-        </defs>
+       <defs>
+
+  <path id="leftPath" d="M100,0 C250,400 250,1000 100,1000" />
+
+  <path id="rightPath" d="M100,0 C-50,400 -50,1000 300,2000" />
+</defs>
       </svg>
 
       {/* Left side - Mirror C */}

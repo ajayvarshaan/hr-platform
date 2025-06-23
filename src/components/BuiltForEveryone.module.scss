@@ -58,7 +58,7 @@
 // Base Styles
 .section {
   padding: 80px 16px;
-  background-color: rgb(188, 184, 184);
+  background-color: rgb(242,244,245);
   font-family: 'Inter', sans-serif;
   text-align: center;
 }
@@ -91,7 +91,7 @@
   // First two cards in top row
   .cardSmall {
     width: 320px;
-    height: 400px;
+    height: 410px;
     flex: 0 0 auto;
     border-radius: 20px;
   }
@@ -124,7 +124,7 @@
   // Both bottom cards equal width
   .cardSmall {
     width: 400px;
-    height: 455px;
+    height: 480px;
     margin-left: -300px;
     flex: 0 0 auto;
     border-radius: 20px;

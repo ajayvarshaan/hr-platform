@@ -1,7 +1,7 @@
 .testimonial-wrapper {
   text-align: center;
   padding: 4rem 1rem;
-  background-color: rgb(188, 184, 184);
+  background-color: rgb(242, 244, 245);
 
   .heading {
     font-size: 2.3rem;
@@ -32,6 +32,7 @@
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
       transition: transform 0.4s ease, box-shadow 0.4s ease;
       background-color: #fff;
+      animation: shakeEnvelope 3s ease-in-out infinite;
     }
 
     &:hover img {
@@ -48,6 +49,24 @@
     to {
       opacity: 1;
       transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes shakeEnvelope {
+    0%, 100% {
+      transform: translateY(0) rotate(0);
+    }
+    20% {
+      transform: translateY(-2px) rotate(-2deg);
+    }
+    40% {
+      transform: translateY(2px) rotate(3deg);
+    }
+    60% {
+      transform: translateY(-1.5px) rotate(-1.5deg);
+    }
+    80% {
+      transform: translateY(1.5px) rotate(1.5deg);
     }
   }
 
