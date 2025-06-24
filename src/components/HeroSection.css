@@ -1,8 +1,8 @@
 .hero-section {
   position: relative;
   width: 100vw;
-  min-height: 130vh;
-  background: linear-gradient(145deg, #fff, #fff);
+  min-height: 80vh;
+  background-color: rgb(242, 244, 245);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,7 +12,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 140px;
+  width: 100px;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -47,10 +47,10 @@
   z-index: 2;
 }
 .hero-section .left-img {
-  offset-path: path("M100,0 C500,350 500,650 100,1000");
+  offset-path: path("M00,0 C500,5 500,650 100,600,");
 }
 .hero-section .right-img {
-  offset-path: path("M40,0 C-360,350 -360,650 40,1000");
+  offset-path: path("M40,0 C-360,10 -360,650 40,600");
 }
 @keyframes moveAlongPath {
   0% {

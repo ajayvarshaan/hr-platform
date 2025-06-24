@@ -26,7 +26,6 @@ import Footer from './components/Footer';
 const App: React.FC = () => {
   return (
     <Box className="app">
-      {/* ✅ Sticky wrapper with spacing */}
       <Box className="header-wrapper">
         <AppBar position="static" color="default" elevation={0} className="header">
           <Toolbar className="toolbar">

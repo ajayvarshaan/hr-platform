@@ -1,18 +1,18 @@
 .footer {
   position: relative;
-  padding: 4rem 1.5rem 6rem;
-  background: #ffffff;
-  margin-top: 6rem;
+  padding: 4rem 1rem 6rem;
+  background-color: rgb(242, 244, 245);
+  margin-top: -1rem;
   border: 2px solid #f3f4f6;
   border-radius: 24px;
   overflow: hidden;
   animation: fadeInUp 1s ease forwards;
-  margin-top: -1rem;
+  width: 93.5rem;
 }
 .footer .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-bottom: 3rem;
+  max-width: 930px;
+  margin: 0;
+  padding-bottom: 2rem;
 }
 .footer .footer-content {
   display: flex;
@@ -25,7 +25,7 @@
 }
 .footer .footer-col {
   flex: 1 1 140px;
-  min-width: 140px;
+  min-width: 130px;
 }
 .footer .footer-col.footer-description {
   flex: 2 1 300px;
@@ -135,7 +135,7 @@
     gap: 2rem;
   }
   .footer .footer-bg-text {
-    font-size: 10rem;
+    font-size: 7rem;
   }
   .footer .footer-col.footer-resources-follow {
     flex-direction: column;
