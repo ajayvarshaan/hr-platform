@@ -4,14 +4,22 @@ import { Box, Typography, Paper, Container } from '@mui/material';
 import gsap from 'gsap';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 
+// ✅ Import images from /src/assets/icons
+import teamsIcon from '../assets/icons/teams.png';
+import gmailIcon from '../assets/icons/gmail.png';
+import loomIcon from '../assets/icons/loom.png';
+import meetIcon from '../assets/icons/meet.png';
+import outlookIcon from '../assets/icons/outlook.png';
+import settingsIcon from '../assets/icons/settings.png';
+
 gsap.registerPlugin(MotionPathPlugin);
 
 const integrations = [
-  { name: 'Teams', src: '/icons/teams.png' },
-  { name: 'Gmail', src: '/icons/gmail.png' },
-  { name: 'Loom', src: '/icons/loom.png' },
-  { name: 'Google Meet', src: '/icons/meet.png' },
-  { name: 'Outlook', src: '/icons/outlook.png' },
+  { name: 'Teams', src: teamsIcon },
+  { name: 'Gmail', src: gmailIcon },
+  { name: 'Loom', src: loomIcon },
+  { name: 'Google Meet', src: meetIcon },
+  { name: 'Outlook', src: outlookIcon },
 ];
 
 const descriptions: Record<string, string> = {
@@ -56,15 +64,17 @@ const IntegrationSection: React.FC = () => {
       }, 3000);
       return () => clearTimeout(timer);
     }
-  }, [descKey]);
+  }, [descKey, selected]);
 
   return (
     <Box className="integration-section">
       <Container maxWidth="md">
+        {/* Settings Icon */}
         <Box className="top-icon">
-          <img src="/icons/settings.png" alt="Settings" />
+          <img src={settingsIcon} alt="Settings" />
         </Box>
 
+        {/* Heading */}
         <Typography
           className="headline"
           fontFamily='"Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif'
@@ -72,6 +82,7 @@ const IntegrationSection: React.FC = () => {
           Integrate with your existing tools
         </Typography>
 
+        {/* Animated Arc Path */}
         <Box className="arc-container">
           <svg width="100%" height="300" viewBox="50 100 700 300">
             <path
@@ -82,6 +93,7 @@ const IntegrationSection: React.FC = () => {
             />
           </svg>
 
+          {/* Integration Icons */}
           <Box className="icon-track">
             {integrations.map((item) => (
               <Paper
@@ -99,6 +111,7 @@ const IntegrationSection: React.FC = () => {
           </Box>
         </Box>
 
+        {/* Description Pop-up */}
         {selected && (
           <Box
             key={descKey}
