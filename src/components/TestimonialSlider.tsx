@@ -23,7 +23,7 @@ const testimonials: Testimonial[] = [
     name: 'James Carter',
     role: 'HR Manager at BrightPath Solutions',
     rating: 5.0,
-    image: '/images/user1.jpg',  // ✅ Correct public path
+    image: '/images/user1.jpg',  
     review: 'The platform is easy to use, keeps everything in one place, and helps our team stay on top of things without extra hassle.',
   },
   {
