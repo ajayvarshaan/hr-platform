@@ -4,26 +4,16 @@ import { Box, Typography, Paper, Container } from '@mui/material';
 import gsap from 'gsap';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 
-// ✅ Importing Images as ES6 imports (so Vite can handle them in build)
-import teamsIcon from '../assets/icons/teams.png';
-import gmailIcon from '../assets/icons/gmail.png';
-import loomIcon from '../assets/icons/loom.png';
-import meetIcon from '../assets/icons/meet.png';
-import outlookIcon from '../assets/icons/outlook.png';
-import settingsIcon from '../assets/icons/settings.png';
-
 gsap.registerPlugin(MotionPathPlugin);
 
-// ✅ Icon Data Array
 const integrations = [
-  { name: 'Teams', src: teamsIcon },
-  { name: 'Gmail', src: gmailIcon },
-  { name: 'Loom', src: loomIcon },
-  { name: 'Google Meet', src: meetIcon },
-  { name: 'Outlook', src: outlookIcon },
+  { name: 'Teams', src: '/icons/teams.png' },
+  { name: 'Gmail', src: '/icons/gmail.png' },
+  { name: 'Loom', src: '/icons/loom.png' },
+  { name: 'Google Meet', src: '/icons/meet.png' },
+  { name: 'Outlook', src: '/icons/outlook.png' },
 ];
 
-// ✅ Descriptions
 const descriptions: Record<string, string> = {
   Teams: 'Microsoft Teams: Team collaboration & chat',
   Gmail: 'Gmail: Email from Google',
@@ -54,12 +44,11 @@ const IntegrationSection: React.FC = () => {
         duration: 10,
         repeat: -1,
         ease: 'linear',
-        delay: index * 2, // Spacing between icons
+        delay: index * 2,
       });
     });
   }, []);
 
-  // ✅ Auto-hide the description after 3 seconds
   useEffect(() => {
     if (selected) {
       const timer = setTimeout(() => {
@@ -72,12 +61,10 @@ const IntegrationSection: React.FC = () => {
   return (
     <Box className="integration-section">
       <Container maxWidth="md">
-        {/* Top Setting Icon */}
         <Box className="top-icon">
-          <img src={settingsIcon} alt="settings" />
+          <img src="/icons/settings.png" alt="Settings" />
         </Box>
 
-        {/* Heading */}
         <Typography
           className="headline"
           fontFamily='"Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif'
@@ -85,7 +72,6 @@ const IntegrationSection: React.FC = () => {
           Integrate with your existing tools
         </Typography>
 
-        {/* Arc Path and Icons */}
         <Box className="arc-container">
           <svg width="100%" height="300" viewBox="50 100 700 300">
             <path
@@ -113,7 +99,6 @@ const IntegrationSection: React.FC = () => {
           </Box>
         </Box>
 
-        {/* Description Popup */}
         {selected && (
           <Box
             key={descKey}

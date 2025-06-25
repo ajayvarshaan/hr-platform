@@ -10,12 +10,6 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import './TestimonialSlider.scss';
 
-// Importing Images
-import user1Img from '../assets/images/user1.jpg';
-import user2Img from '../assets/images/user2.jpg';
-import user3Img from '../assets/images/user3.jpg';
-import envelopeCloseImg from '../assets/images/envalope-close.jpg';
-
 interface Testimonial {
   name: string;
   role: string;
@@ -29,21 +23,21 @@ const testimonials: Testimonial[] = [
     name: 'James Carter',
     role: 'HR Manager at BrightPath Solutions',
     rating: 5.0,
-    image: user1Img,
+    image: '/images/user1.jpg',  // ✅ Correct public path
     review: 'The platform is easy to use, keeps everything in one place, and helps our team stay on top of things without extra hassle.',
   },
   {
     name: 'Anika Sharma',
     role: 'CTO at DevCraft',
     rating: 4.9,
-    image: user2Img,
+    image: '/images/user2.jpg',
     review: 'CoreShift empowered our team to collaborate better and achieve faster onboarding.',
   },
   {
     name: 'Lucas Bennett',
     role: 'Founder at Softify',
     rating: 5.0,
-    image: user3Img,
+    image: '/images/user3.jpg',
     review: 'A fantastic HR platform that adapts to our needs. It has made a real difference in productivity.',
   },
 ];
@@ -87,7 +81,7 @@ const TestimonialSlider: React.FC = () => {
 
       {!isOpen ? (
         <Box className="envelope-cover" onClick={handleToggle}>
-          <img src={envelopeCloseImg} alt="Envelope Closed" />
+          <img src="/images/envalope-close.jpg" alt="Envelope Closed" /> {/* ✅ Envelope image from /public */}
         </Box>
       ) : (
         <Box className="carousel">

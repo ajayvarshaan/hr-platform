@@ -23,10 +23,6 @@ import IntegrationSection from './components/IntegrationSection';
 import TestimonialSlider from './components/TestimonialSlider';
 import Footer from './components/Footer';
 
-// ✅ Importing user images correctly
-import user1Img from './assets/images/user1.jpg';
-import user2Img from './assets/images/user2.jpg';
-
 const App: React.FC = () => {
   return (
     <Box className="app">
@@ -52,7 +48,7 @@ const App: React.FC = () => {
       {/* Landing Section */}
       <Container maxWidth="md" className="landing-container">
         <Box className="network">
-          <img src={user1Img} alt="User 1" />
+          <img src="/images/user1.jpg" alt="User 1" /> {/* ✅ Correct Public Path */}
           <Box className="icon-box main"><ManIcon /></Box>
           <Box className="icon-box yellow"><EmojiObjectsIcon /></Box>
           <Box className="icon-box blue"><CelebrationIcon /></Box>
@@ -60,7 +56,7 @@ const App: React.FC = () => {
           <Box className="icon-box red"><ShieldIcon /></Box>
           <Box className="icon-box gray"><VisibilityIcon /></Box>
           <Box className="icon-box green"><SupportAgentIcon /></Box>
-          <img src={user2Img} alt="User 2" />
+          <img src="/images/user2.jpg" alt="User 2" /> {/* ✅ Correct Public Path */}
         </Box>
 
         <Typography variant="h3" className="headline">
