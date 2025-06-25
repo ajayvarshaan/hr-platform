@@ -18,19 +18,24 @@ import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 
 import './App.scss';
 import HeroSection from './components/HeroSection';
-import BuildForEveryone from './components/BuiltForEveryone';
+import BuiltForEveryone from './components/BuiltForEveryone';
 import IntegrationSection from './components/IntegrationSection';
 import TestimonialSlider from './components/TestimonialSlider';
 import Footer from './components/Footer';
 
+// ✅ Importing user images correctly
+import user1Img from './assets/images/user1.jpg';
+import user2Img from './assets/images/user2.jpg';
+
 const App: React.FC = () => {
   return (
     <Box className="app">
+      {/* Header/Navbar */}
       <Box className="header-wrapper">
         <AppBar position="static" color="default" elevation={0} className="header">
           <Toolbar className="toolbar">
             <Typography variant="h6" className="logo">Groupon</Typography>
-            <Box className="nav-links" >
+            <Box className="nav-links">
               <Button className="black-button">Product</Button>
               <Button className="black-button">Features</Button>
               <Button className="black-button">Pricing</Button>
@@ -44,9 +49,10 @@ const App: React.FC = () => {
         </AppBar>
       </Box>
 
+      {/* Landing Section */}
       <Container maxWidth="md" className="landing-container">
         <Box className="network">
-          <img src="/images/user1.jpg" alt="User 1" />
+          <img src={user1Img} alt="User 1" />
           <Box className="icon-box main"><ManIcon /></Box>
           <Box className="icon-box yellow"><EmojiObjectsIcon /></Box>
           <Box className="icon-box blue"><CelebrationIcon /></Box>
@@ -54,8 +60,7 @@ const App: React.FC = () => {
           <Box className="icon-box red"><ShieldIcon /></Box>
           <Box className="icon-box gray"><VisibilityIcon /></Box>
           <Box className="icon-box green"><SupportAgentIcon /></Box>
-          <img src="/images/user2.jpg" alt="User 2" />
-          
+          <img src={user2Img} alt="User 2" />
         </Box>
 
         <Typography variant="h3" className="headline">
@@ -67,8 +72,9 @@ const App: React.FC = () => {
         <Button className="cta-button">Request a Demo</Button>
       </Container>
 
+      {/* Section Components */}
       <HeroSection />
-      <BuildForEveryone />
+      <BuiltForEveryone />
       <IntegrationSection />
       <TestimonialSlider />
       <Footer />
