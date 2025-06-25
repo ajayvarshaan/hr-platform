@@ -3,25 +3,22 @@ import { Box, Typography, Button } from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import './HeroSection.scss';
 
-// ✅ Images from /public/images/ folder (accessed using public URLs)
-const leftImages = [
-  '/images/user1.jpg',
-  '/images/user2.jpg',
-  '/images/user3.jpg',
-  '/images/user4.jpg', 
-];
+// ✅ Import images from src/assets/images
+import user1 from '../assets/images/user1.jpg';
+import user2 from '../assets/images/user2.jpg';
+import user3 from '../assets/images/user3.jpg';
+import user5 from '../assets/images/user5.jpg';
+import user6 from '../assets/images/user6.jpg';
+import user7 from '../assets/images/user7.jpg';
 
-const rightImages = [
-  '/images/user5.jpg',
-  '/images/user6.jpg',
-  '/images/user7.jpg',
-  '/images/user2.jpg',
-];
+// ✅ Update image arrays
+const leftImages = [user5, user6, user7, user2];
+const rightImages = [user1, user2, user3, user6];
 
 const HeroSection: React.FC = () => {
   return (
     <Box className="hero-section">
-      {/* Invisible SVG Paths for Animation (if used with GSAP or CSS animations) */}
+      {/* Invisible SVG Paths (for animations like GSAP if needed) */}
       <svg width="0" height="0">
         <defs>
           <path id="leftPath" d="M100,0 C250,500 250,1200 100,1300" />
@@ -55,7 +52,7 @@ const HeroSection: React.FC = () => {
         ))}
       </div>
 
-      {/* Center Text & CTA */}
+      {/* Center Text and Button */}
       <Box className="hero-content">
         <Box className="hero-icon">
           <AccountCircleIcon sx={{ fontSize: 40, color: '#9b6dff' }} />
