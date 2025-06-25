@@ -184,7 +184,7 @@ const BuiltForEveryone = () => {
               })}
             </Box>
           </Box>
-          <Typography variant="h6" className={styles.cardTitle} marginTop={36}><strong>For teams & employees</strong></Typography>
+          <Typography variant="h6" className={styles.cardTitle} marginTop={20} ><strong>For teams & employees</strong></Typography>
              <Box><Typography variant='body2' marginTop={1}>Stay informed about upcoming events and know who will be out of office in advance,Track upcoming events and out-of-office schedules effortlessly,</Typography></Box>
             
         </Card>

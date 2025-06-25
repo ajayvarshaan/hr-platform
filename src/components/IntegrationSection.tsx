@@ -76,7 +76,7 @@ const IntegrationSection: React.FC = () => {
           <svg width="100%" height="300" viewBox="50 100 700 300">
             <path
               ref={pathRef}
-              d="M 100 280 Q 550 150 1000 280"
+              d="M 100 400 Q 600 -10 1000 400"
 
               fill="none"
               stroke="transparent"

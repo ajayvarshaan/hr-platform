@@ -76,7 +76,7 @@ const TestimonialSlider: React.FC = () => {
         Words of Appreciation
       </Typography>
       <Typography className="subheading">
-        Thousands of businesses, from startups to enterprises, use CoreShift to handle payments.
+        Thousands of businesses, from startups to enterprises, use Groupon to handle payments.
       </Typography>
 
       {!isOpen ? (
@@ -111,7 +111,7 @@ const TestimonialSlider: React.FC = () => {
             <ArrowForwardIosIcon />
           </IconButton>
         </Box>
-      )}
+      )}   
     </Box>
   );
 };

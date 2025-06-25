@@ -7,6 +7,7 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  
 
   .image-track {
     position: absolute;
@@ -51,12 +52,12 @@
     }
   }
 
-      .left-img {
-    offset-path: path("M00,0 C500,5 500,650 100,600,");
-      }
-  .right-img {
-    offset-path: path("M40,0 C-360,10 -360,650 40,600"); // more pronounced mirrored C curve
-  }
+    .left-img {
+  offset-path: path("M00,0 C500,5 500,650 100,650"); // slight increase
+}
+.right-img {
+  offset-path: path("M40,0 C-360,10 -360,650 40,650"); // same here
+}
   @keyframes moveAlongPath {
     0% {
       offset-distance: 0%;

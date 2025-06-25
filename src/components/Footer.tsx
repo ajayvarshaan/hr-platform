@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Left Column */}
           <Box className="footer-col footer-description">
             <Typography variant="h6" className="footer-heading">
-              CoreShift is the HRM platform that builds a thriving workplace culture—all in one place.
+              Groupon is the HRM platform that builds a thriving workplace culture—all in one place.
             </Typography>
           </Box>
 
@@ -56,7 +56,7 @@ export default function Footer() {
 
     
       <Typography variant="h1" className="footer-bg-text">
-        CoreShift
+        Groupon
       </Typography>
     </Box>
   );

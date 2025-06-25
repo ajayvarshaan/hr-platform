@@ -7,14 +7,16 @@ const leftImages = [
   '/images/user1.jpg',
   '/images/user2.jpg',
   '/images/user3.jpg',
-  
+    '/images/user6.jpg',
+     
 ];
 
 const rightImages = [
   '/images/user5.jpg',
   '/images/user6.jpg',
   '/images/user7.jpg',
-
+    '/images/user2.jpg',
+    
 ];
 
 const HeroSection: React.FC = () => {
@@ -22,21 +24,20 @@ const HeroSection: React.FC = () => {
     <Box className="hero-section">
       {/* SVG paths to define motion paths */}
       <svg width="0" height="0">
-       <defs>
-
-  <path id="leftPath" d="M100,0 C250,400 250,1000 100,1000" />
-
-  <path id="rightPath" d="M100,0 C-50,400 -50,1000 300,2000" />
-</defs>
+        <defs>
+          {/* Increased vertical curvature for more spacing */}
+          <path id="leftPath" d="M100,0 C250,500 250,1200 100,1300" />
+          <path id="rightPath" d="M100,0 C-50,500 -50,1200 300,1300" />
+        </defs>
       </svg>
 
       {/* Left side - Mirror C */}
       <div className="image-track left-track">
-        {[...Array(8)].map((_, i) => (
+        {[...Array(5)].map((_, i) => (
           <div
             key={`left-${i}`}
             className="profile-card left-img"
-            style={{ animationDelay: `${i * 2}s` }}
+            style={{ animationDelay: `${i * 3}s` }} // increased delay for spacing
           >
             <img src={leftImages[i % leftImages.length]} alt={`left-${i}`} />
           </div>
@@ -45,11 +46,11 @@ const HeroSection: React.FC = () => {
 
       {/* Right side - C */}
       <div className="image-track right-track">
-        {[...Array(8)].map((_, i) => (
+        {[...Array(5)].map((_, i) => (
           <div
             key={`right-${i}`}
             className="profile-card right-img"
-            style={{ animationDelay: `${i * 2}s` }}
+            style={{ animationDelay: `${i * 3}s` }} // increased delay for spacing
           >
             <img src={rightImages[i % rightImages.length]} alt={`right-${i}`} />
           </div>

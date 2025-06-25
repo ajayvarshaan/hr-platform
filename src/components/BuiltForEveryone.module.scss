@@ -769,16 +769,19 @@
 }
 // Teams & Employees Card
 .circleWrapperSmall {
-  top: 10px;
   position: relative;
-  width: 160px; // slightly bigger circle
-  height: 200px;
-  margin: 64px 10px 16px;
+  width: 200px; // larger circle
+  height: 800px;
+  margin-top:50px; // centers the circle horizontally
   border-radius: 50%;
   background: linear-gradient(145deg, #f8f9fa, #e0e7ff 100%);
   box-shadow: 0 6px 24px rgba(59, 130, 246, 0.1),
               inset 0 0 0 2px #a5b4fc33;
   transition: all 0.4s ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
     transform: scale(1.05);
@@ -788,29 +791,33 @@
 
 .avatarsOrbit {
   position: absolute;
-  top: 10px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform-origin: 50% 50%;
+  top: -10px;
+  left: -4;
+  width: 200%;
+  height: 120%;
+  transform-origin: center;
 }
 
 .avatarContainerSmall {
   position: absolute;
-  width: 52px;  // bigger avatar
+  width: 52px;
   height: 52px;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg) translateY(-80px); // distance from center
+  transform-origin: center;
   transition: all 0.3s ease;
   z-index: 2;
 
   &:hover {
-    transform: translate(-50%, -50%) scale(1.15);
+    transform: translate(-50%, -50%) rotate(0deg) translateY(-80px) scale(1.15);
     z-index: 3;
     box-shadow: 0 4px 16px #a5b4fc55;
   }
 }
 
 .circleAvatarSmall {
-  width: 100%;
+  width: 120%;
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
@@ -820,7 +827,7 @@
 
 .centerBadgeSmall {
   position: absolute;
-  top: 58%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 60px;
@@ -840,7 +847,7 @@
 }
 
 .trophyIconSmall {
-  font-size: 28px;
+  font-size: 20px;
   color: #000009;
   filter: drop-shadow(0 2px 8px #fbbf24aa);
   transition: all 0.3s ease;

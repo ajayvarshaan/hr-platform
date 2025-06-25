@@ -29,7 +29,7 @@ const App: React.FC = () => {
       <Box className="header-wrapper">
         <AppBar position="static" color="default" elevation={0} className="header">
           <Toolbar className="toolbar">
-            <Typography variant="h6" className="logo">CoreShift</Typography>
+            <Typography variant="h6" className="logo">Groupon</Typography>
             <Box className="nav-links" >
               <Button className="black-button">Product</Button>
               <Button className="black-button">Features</Button>
@@ -62,7 +62,7 @@ const App: React.FC = () => {
           All-in-one HR platform
         </Typography>
         <Typography className="description">
-          CoreShift is a modern, all-in-one HR platform designed to perfectly fit your business needs.
+          Groupon is a modern, all-in-one HR platform designed to perfectly fit your business needs.
         </Typography>
         <Button className="cta-button">Request a Demo</Button>
       </Container>
