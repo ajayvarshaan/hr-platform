@@ -3,21 +3,16 @@ import { Box, Typography, Button } from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import './HeroSection.scss';
 
-const leftImages = [
-  '/images/user1.jpg',
-  '/images/user2.jpg',
-  '/images/user3.jpg',
-    '/images/user6.jpg',
-     
-];
+// ✅ Import all images
+import user1 from '../assets/images/user1.jpg';
+import user2 from '../assets/images/user2.jpg';
+import user3 from '../assets/images/user3.jpg';
+import user5 from '../assets/images/user5.jpg';
+import user6 from '../assets/images/user6.jpg';
+import user7 from '../assets/images/user7.jpg';
 
-const rightImages = [
-  '/images/user5.jpg',
-  '/images/user6.jpg',
-  '/images/user7.jpg',
-    '/images/user2.jpg',
-    
-];
+const leftImages = [user1, user2, user3, user6];
+const rightImages = [user5, user6, user7, user2];
 
 const HeroSection: React.FC = () => {
   return (
@@ -37,7 +32,7 @@ const HeroSection: React.FC = () => {
           <div
             key={`left-${i}`}
             className="profile-card left-img"
-            style={{ animationDelay: `${i * 3}s` }} // increased delay for spacing
+            style={{ animationDelay: `${i * 3}s` }}
           >
             <img src={leftImages[i % leftImages.length]} alt={`left-${i}`} />
           </div>
@@ -50,7 +45,7 @@ const HeroSection: React.FC = () => {
           <div
             key={`right-${i}`}
             className="profile-card right-img"
-            style={{ animationDelay: `${i * 3}s` }} // increased delay for spacing
+            style={{ animationDelay: `${i * 3}s` }}
           >
             <img src={rightImages[i % rightImages.length]} alt={`right-${i}`} />
           </div>
