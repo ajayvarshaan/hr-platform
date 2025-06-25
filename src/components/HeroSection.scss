@@ -1,7 +1,7 @@
 .hero-section {
   position: relative;
   width: 100vw;
-  min-height: 80vh;
+  min-height: 70vh;
    background-color: rgb(242,244,245);
   display: flex;
   justify-content: center;
@@ -53,10 +53,10 @@
   }
 
     .left-img {
-  offset-path: path("M00,0 C500,5 500,650 100,650"); // slight increase
+  offset-path: path("M00,0 C500,5 500,650 100,550"); // slight increase
 }
 .right-img {
-  offset-path: path("M40,0 C-360,10 -360,650 40,650"); // same here
+  offset-path: path("M40,0 C-360,10 -360,650 40,550"); // same here
 }
   @keyframes moveAlongPath {
     0% {
