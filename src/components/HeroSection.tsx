@@ -3,12 +3,12 @@ import { Box, Typography, Button } from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import './HeroSection.scss';
 
-// ✅ Use public folder image paths (accessible in dev + build + GitHub Pages)
+// ✅ Images from /public/images/ folder (accessed using public URLs)
 const leftImages = [
   '/images/user1.jpg',
   '/images/user2.jpg',
   '/images/user3.jpg',
-  '/images/user6.jpg',
+  '/images/user4.jpg', 
 ];
 
 const rightImages = [
@@ -21,7 +21,7 @@ const rightImages = [
 const HeroSection: React.FC = () => {
   return (
     <Box className="hero-section">
-      {/* SVG Paths */}
+      {/* Invisible SVG Paths for Animation (if used with GSAP or CSS animations) */}
       <svg width="0" height="0">
         <defs>
           <path id="leftPath" d="M100,0 C250,500 250,1200 100,1300" />
@@ -29,7 +29,7 @@ const HeroSection: React.FC = () => {
         </defs>
       </svg>
 
-      {/* Left Side Images */}
+      {/* Left Side Profile Images */}
       <div className="image-track left-track">
         {[...Array(5)].map((_, i) => (
           <div
@@ -42,7 +42,7 @@ const HeroSection: React.FC = () => {
         ))}
       </div>
 
-      {/* Right Side Images */}
+      {/* Right Side Profile Images */}
       <div className="image-track right-track">
         {[...Array(5)].map((_, i) => (
           <div
@@ -55,7 +55,7 @@ const HeroSection: React.FC = () => {
         ))}
       </div>
 
-      {/* Center Text */}
+      {/* Center Text & CTA */}
       <Box className="hero-content">
         <Box className="hero-icon">
           <AccountCircleIcon sx={{ fontSize: 40, color: '#9b6dff' }} />
