@@ -1,0 +1,16 @@
+.transfer-dialog .MuiDialog-paper {
+  border-radius: 12px;
+  padding: 0.25rem;
+  min-width: 320px;
+}
+.transfer-message {
+  color: #2b3944;
+  font-size: 0.98rem;
+}
+.transfer-dialog .cancel {
+  color: #33474e;
+}
+.transfer-dialog .confirm {
+  background: linear-gradient(90deg,#9b6dff,#6d8cff);
+  color: #fff;
+}

@@ -1,0 +1,38 @@
+.request-page{
+  display:flex;
+  justify-content:center;
+  padding:4rem 1rem;
+  position:relative;
+  background:linear-gradient(180deg,#fbfdff 0%, #fff 100%);
+
+  .decor{ position:absolute; right:6%; top:10%; pointer-events:none;
+    .blob{ position:absolute; border-radius:18px; opacity:0.95 }
+    .blob-1{ width:140px; height:80px; background:linear-gradient(135deg,#ffe8b5,#ffd0d0); right:-40px; top:-10px; transform:rotate(12deg); animation:float 6s ease-in-out infinite }
+    .blob-2{ width:80px; height:120px; background:linear-gradient(135deg,#c8f3ff,#dbe7ff); right:40px; top:80px; transform:rotate(-10deg); animation:float 5.5s ease-in-out infinite }
+  }
+
+  .request-card{
+    width:100%;
+    max-width:620px;
+    background:linear-gradient(180deg,#fff,#fbfbff);
+    padding:2rem;
+    border-radius:14px;
+    box-shadow:0 22px 56px rgba(11,18,32,0.08);
+    position:relative;
+    overflow:hidden;
+
+    &:before{ content:""; position:absolute; inset:-2px; z-index:-1; border-radius:16px; background:linear-gradient(90deg, rgba(99,102,241,0.08), rgba(16,185,129,0.06)); filter:blur(10px) }
+
+    .title{ font-weight:800; margin-bottom:.25rem; color:#071224; font-size:1.5rem }
+    .subtitle{ color:#555; margin-bottom:1rem }
+    .field{ margin-bottom:.6rem }
+    .actions{ display:flex; gap:.6rem; justify-content:flex-end; margin-top:.8rem }
+    .primary{ background:linear-gradient(90deg,#5b6cff,#6ad1a6); color:#fff }
+  }
+
+  .animate-in{ animation:fadeInUpScale .56s cubic-bezier(.2,.9,.3,1) both }
+}
+
+@keyframes float{ 0%{ transform:translateY(0) } 50%{ transform:translateY(-12px) } 100%{ transform:translateY(0) } }
+
+@keyframes fadeInUpScale{ from{ opacity:0; transform:translateY(18px) scale(.98) } to{ opacity:1; transform:translateY(0) scale(1) } }

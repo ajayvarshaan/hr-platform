@@ -27,6 +27,11 @@ body {
   justify-content: center;
 }
 
+/* Global default text color for readability */
+body, p, span, li, h1, h2, h3, h4, h5 {
+  color: #0b1220;
+}
+
 .header-wrapper {
   position: sticky;
   top: 1.5rem;

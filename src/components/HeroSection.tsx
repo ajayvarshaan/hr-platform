@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import './HeroSection.scss';
@@ -16,6 +16,7 @@ const leftImages = [user5, user6, user7, user2];
 const rightImages = [user1, user2, user3, user6];
 
 const HeroSection: React.FC = () => {
+  const [detailPopup, setDetailPopup] = useState<string | null>(null);
   return (
     <Box className="hero-section">
       {/* Invisible SVG Paths (for animations like GSAP if needed) */}
@@ -65,6 +66,48 @@ const HeroSection: React.FC = () => {
         </Typography>
         <Button className="learn-more-btn">LEARN MORE</Button>
       </Box>
+      {detailPopup && (
+        <div className="learn-detail-pop" onClick={() => setDetailPopup(null)}>
+          <div className="learn-detail-card" onClick={(e) => e.stopPropagation()}>
+            {detailPopup === 'hr' && (
+              <>
+                <h3>Core HR — details</h3>
+                <p>Manage profiles, documents, workflows, and approvals with role-based access and full audit trails.</p>
+                <ul>
+                  <li>Employee profiles & documents</li>
+                  <li>Custom workflows & approvals</li>
+                  <li>Time off and attendance</li>
+                </ul>
+                <div className="detail-actions"><Button className="primary" onClick={() => { setDetailPopup(null); }}>Close</Button></div>
+              </>
+            )}
+            {detailPopup === 'pay' && (
+              <>
+                <h3>Payroll — details</h3>
+                <p>Run payroll globally with automated tax filings, direct deposits and on-demand pay options.</p>
+                <ul>
+                  <li>Multi-country payroll</li>
+                  <li>Direct deposit & tax filing</li>
+                  <li>Pay stubs & reports</li>
+                </ul>
+                <div className="detail-actions"><Button className="primary" onClick={() => { setDetailPopup(null); }}>Close</Button></div>
+              </>
+            )}
+            {detailPopup === 'int' && (
+              <>
+                <h3>Integrations — details</h3>
+                <p>Connect Slack, Google Workspace, payroll providers and SSO for streamlined workflows.</p>
+                <ul>
+                  <li>Slack: notifications & approvals</li>
+                  <li>SSO & provisioning</li>
+                  <li>Payroll provider connectors</li>
+                </ul>
+                <div className="detail-actions"><Button className="primary" onClick={() => { setDetailPopup(null); }}>Close</Button></div>
+              </>
+            )}
+          </div>
+        </div>
+      )}
     </Box>
   );
 };

@@ -53,10 +53,10 @@
   }
 
     .left-img {
-  offset-path: path("M00,0 C500,5 500,650 100,550"); // slight increase
+  offset-path: path("M00,0 C500,5 500,650 100,550"); 
 }
 .right-img {
-  offset-path: path("M40,0 C-360,10 -360,650 40,550"); // same here
+  offset-path: path("M40,0 C-360,10 -360,650 40,550"); 
 }
   @keyframes moveAlongPath {
     0% {
@@ -120,6 +120,17 @@
       &:hover {
         transform: translateY(-2px) scale(1.05);
         background: linear-gradient(90deg, #ae92ff, #9b6dff);
+      }
+    }
+ 
+    /* Separate detail popup card */
+    .learn-detail-pop{ position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(6,10,18,0.48); backdrop-filter:blur(4px); z-index:90; animation:fadeOverlay .18s ease both;
+      .learn-detail-card{ width:min(720px,94%); background:#ffffff; border-radius:14px; padding:1.2rem; box-shadow:0 30px 90px rgba(6,12,24,0.7); border:1px solid rgba(15,23,42,0.08); transform:translateY(12px) scale(.995); animation:popIn .36s cubic-bezier(.2,.9,.3,1) both;
+        h3{ margin:0 0 .4rem 0; color:#071224; font-size:1.15rem }
+        p{ color:#34424a; margin-bottom:.6rem }
+        ul{ margin-left:1.1rem; color:#3b4b52 }
+        .detail-actions{ display:flex; justify-content:flex-end; margin-top:.8rem }
+        .primary{ background:linear-gradient(90deg,#6b65ff,#4fd59a); color:#fff; padding:.5rem 1.2rem; border-radius:6px }
       }
     }
   }
