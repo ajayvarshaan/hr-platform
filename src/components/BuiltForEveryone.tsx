@@ -43,8 +43,6 @@ const BuiltForEveryone = () => {
 
       {/* Top Row - 2 small + 1 wide card */}
       <Box className={styles.topRow} >
-        {/* HR Professionals */}
-        
         <Paper className={styles.cardSmall} elevation={0} >
           <Box className={styles.hrCardHeader}>
             <Typography className={styles.cardTitleSmall}>Attendance Report</Typography>
@@ -80,7 +78,6 @@ const BuiltForEveryone = () => {
          
         </Paper>
 
-        {/* Managers & Leaders */}
         <Paper className={styles.cardSmall} elevation={0}>
           <Box className={styles.wireCircleContainer}>
             <Box className={styles.wireCircle} />
@@ -98,7 +95,6 @@ const BuiltForEveryone = () => {
          
         </Paper>
 
-        {/* Legal Teams - Wider Card */}
         <Paper className={styles.cardWide} elevation={0}>
           <Box className={styles.legalCardFlex} >
             <Box className={styles.legalBlurSide} style={{ left: 0 }} />
@@ -122,7 +118,6 @@ const BuiltForEveryone = () => {
 
       {/* Bottom Row - Modified layout */}
       <Box className={styles.bottomRow } >
-        {/* All Employee Data - Wider and Aligned */}
       <Paper className={`${styles.cardBig} ${styles.employeeDataCard}`} elevation={0}>
            <Box className={styles.userInfo} marginTop={-2.5}>
         <Typography className={styles.name}>Ajay Varshaan</Typography>

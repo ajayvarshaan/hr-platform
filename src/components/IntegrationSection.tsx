@@ -4,7 +4,6 @@ import { Box, Typography, Paper, Container } from '@mui/material';
 import gsap from 'gsap';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 
-// ✅ Import images from /src/assets/icons
 import teamsIcon from '../assets/icons/teams.png';
 import gmailIcon from '../assets/icons/gmail.png';
 import loomIcon from '../assets/icons/loom.png';
@@ -69,12 +68,10 @@ const IntegrationSection: React.FC = () => {
   return (
     <Box className="integration-section">
       <Container maxWidth="md">
-        {/* Settings Icon */}
         <Box className="top-icon">
           <img src={settingsIcon} alt="Settings" />
         </Box>
 
-        {/* Heading */}
         <Typography
           className="headline"
           fontFamily='"Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif'
@@ -82,7 +79,6 @@ const IntegrationSection: React.FC = () => {
           Integrate with your existing tools
         </Typography>
 
-        {/* Animated Arc Path */}
         <Box className="arc-container">
           <svg width="100%" height="300" viewBox="50 100 700 300">
             <path
@@ -93,7 +89,6 @@ const IntegrationSection: React.FC = () => {
             />
           </svg>
 
-          {/* Integration Icons */}
           <Box className="icon-track">
             {integrations.map((item) => (
               <Paper
@@ -111,7 +106,6 @@ const IntegrationSection: React.FC = () => {
           </Box>
         </Box>
 
-        {/* Description Pop-up */}
         {selected && (
           <Box
             key={descKey}

@@ -28,7 +28,7 @@ const testimonials: Testimonial[] = [
     name: 'James Carter',
     role: 'HR Manager at BrightPath Solutions',
     rating: 5.0,
-    image: user1, // ✅ Imported image
+    image: user1,
     review: 'The platform is easy to use, keeps everything in one place, and helps our team stay on top of things without extra hassle.',
   },
   {
@@ -86,7 +86,7 @@ const TestimonialSlider: React.FC = () => {
 
       {!isOpen ? (
         <Box className="envelope-cover" onClick={handleToggle}>
-          <img src={envelopeClose} alt="Envelope Closed" /> {/* ✅ Imported image */}
+          <img src={envelopeClose} alt="Envelope Closed" />
         </Box>
       ) : (
         <Box className="carousel">

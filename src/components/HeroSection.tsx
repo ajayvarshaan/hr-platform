@@ -3,7 +3,6 @@ import { Box, Typography, Button } from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import './HeroSection.scss';
 
-// ✅ Import images from src/assets/images
 import user1 from '../assets/images/user1.jpg';
 import user2 from '../assets/images/user2.jpg';
 import user3 from '../assets/images/user3.jpg';
@@ -11,15 +10,17 @@ import user5 from '../assets/images/user5.jpg';
 import user6 from '../assets/images/user6.jpg';
 import user7 from '../assets/images/user7.jpg';
 
-// ✅ Update image arrays
 const leftImages = [user5, user6, user7, user2];
 const rightImages = [user1, user2, user3, user6];
 
-const HeroSection: React.FC = () => {
+interface HeroSectionProps {
+  onNavigate?: (path: string) => void;
+}
+
+const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
   const [detailPopup, setDetailPopup] = useState<string | null>(null);
   return (
     <Box className="hero-section">
-      {/* Invisible SVG Paths (for animations like GSAP if needed) */}
       <svg width="0" height="0">
         <defs>
           <path id="leftPath" d="M100,0 C250,500 250,1200 100,1300" />
@@ -27,7 +28,6 @@ const HeroSection: React.FC = () => {
         </defs>
       </svg>
 
-      {/* Left Side Profile Images */}
       <div className="image-track left-track">
         {[...Array(5)].map((_, i) => (
           <div
@@ -40,7 +40,6 @@ const HeroSection: React.FC = () => {
         ))}
       </div>
 
-      {/* Right Side Profile Images */}
       <div className="image-track right-track">
         {[...Array(5)].map((_, i) => (
           <div
@@ -53,7 +52,6 @@ const HeroSection: React.FC = () => {
         ))}
       </div>
 
-      {/* Center Text and Button */}
       <Box className="hero-content">
         <Box className="hero-icon">
           <AccountCircleIcon sx={{ fontSize: 40, color: '#9b6dff' }} />
@@ -64,7 +62,7 @@ const HeroSection: React.FC = () => {
         <Typography className="hero-description">
           Streamline HR processes in one centralized platform, enhancing team transparency.
         </Typography>
-        <Button className="learn-more-btn">LEARN MORE</Button>
+        <Button className="learn-more-btn" onClick={() => onNavigate?.('/learn-more')}>LEARN MORE</Button>
       </Box>
       {detailPopup && (
         <div className="learn-detail-pop" onClick={() => setDetailPopup(null)}>

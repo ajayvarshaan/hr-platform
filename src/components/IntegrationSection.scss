@@ -34,10 +34,10 @@
     .icon-card {
       width: 150px;
       height: 90px;
-      background:#e5e4e4; // translucent background
+      background:#e5e4e4; 
       border-radius: 16px;
       backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px); // Safari support
+      -webkit-backdrop-filter: blur(10px);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
       display: flex;
       align-items: center;
@@ -45,13 +45,13 @@
       position: absolute;
       cursor: pointer;
       pointer-events: auto;
-      border: 1px solid rgba(255, 255, 255, 0.3); // subtle border
+      border: 1px solid rgba(255, 255, 255, 0.3);
 
       img {
         width: 60%;
         height: auto;
         object-fit: contain;
-        opacity: 1; // optional slight transparency
+        opacity: 1;
       }
 
       &:hover {

@@ -10,9 +10,9 @@
   width: 93.5rem;
 
   .container {
-    max-width: 930px; // reduced from 1100px
+    max-width: 930px; 
     margin: 0 ;
-    padding-bottom: 2rem; // extra space at bottom
+    padding-bottom: 2rem; 
   }
 
   .footer-content {
@@ -121,7 +121,6 @@
     pointer-events: none;
   }
 
-  // Animations
   @keyframes fadeInUp {
     0% {
       transform: translateY(50px);
@@ -148,7 +147,6 @@
     }
   }
 
-  // Responsive
   @media (max-width: 768px) {
     .footer-content {
       flex-direction: column;

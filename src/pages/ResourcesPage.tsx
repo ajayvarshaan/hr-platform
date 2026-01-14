@@ -10,6 +10,7 @@ const ResourcesPage: React.FC<Props> = ({ onNavigate }) => {
   const [modalAction, setModalAction] = useState<() => void>(() => () => {});
   const [modalTitle, setModalTitle] = useState<string>('');
   const [modalMessage, setModalMessage] = useState<React.ReactNode>('');
+  const [activeDetail, setActiveDetail] = useState<string | null>(null);
 
   const openConfirm = (action: () => void, title?: string, message?: React.ReactNode) => {
     setModalAction(() => action);
@@ -22,7 +23,6 @@ const ResourcesPage: React.FC<Props> = ({ onNavigate }) => {
     setModalOpen(false);
     modalAction();
   };
-  const [activeDetail, setActiveDetail] = useState<string | null>(null);
 
   return (
     <Box className="resources-page">
@@ -30,10 +30,7 @@ const ResourcesPage: React.FC<Props> = ({ onNavigate }) => {
         <Typography variant="h2" className="title">Resources & Guides</Typography>
         <Typography className="subtitle">Knowledge base, guides, and integrations to get you started faster.</Typography>
         <Box className="hero-actions">
-          <Button className="primary-cta" onClick={() => openConfirm(() => window.open('https://example.com/docs', '_blank'), 'Open docs', <>
-            <p>You will open documentation in a new tab.</p>
-            <p>Topics included: Quickstart, Integrations, API reference, Security.</p>
-          </>)}>Browse docs</Button>
+          <Button className="primary-cta" onClick={() => setActiveDetail('docs')}>Browse docs</Button>
           <Button className="secondary-cta" onClick={() => onNavigate('/')}>Back to Home</Button>
         </Box>
       </Box>
@@ -63,6 +60,19 @@ const ResourcesPage: React.FC<Props> = ({ onNavigate }) => {
         {activeDetail && (
           <div className="detail-pop" onClick={() => setActiveDetail(null)}>
             <div className="detail-card" onClick={(e) => e.stopPropagation()}>
+              {activeDetail === 'docs' && (
+                <>
+                  <h3>Documentation</h3>
+                  <p>Comprehensive documentation covering all aspects of our HR platform.</p>
+                  <ul>
+                    <li><strong>Quickstart:</strong> Get up and running in minutes</li>
+                    <li><strong>Integrations:</strong> Connect with your favorite tools</li>
+                    <li><strong>API Reference:</strong> Build custom solutions</li>
+                    <li><strong>Security:</strong> Enterprise-grade security features</li>
+                  </ul>
+                  <div className="detail-actions"><Button onClick={() => setActiveDetail(null)} className="primary">Close</Button></div>
+                </>
+              )}
               {activeDetail === 'getting-started' && (
                 <>
                   <h3>Getting started</h3>
@@ -71,8 +81,9 @@ const ResourcesPage: React.FC<Props> = ({ onNavigate }) => {
                     <li>Step 1: Create organization</li>
                     <li>Step 2: Invite admins and HR</li>
                     <li>Step 3: Configure payroll & benefits</li>
+                    <li>Step 4: Import and manage employees</li>
                   </ul>
-                  <div className="detail-actions"><Button onClick={() => { setActiveDetail(null); openConfirm(() => window.open('https://example.com/getting-started', '_blank'), 'Open guide', 'Open Getting Started guide in a new tab?'); }} className="primary">Open guide</Button></div>
+                  <div className="detail-actions"><Button onClick={() => setActiveDetail(null)} className="primary">Back to Resources</Button></div>
                 </>
               )}
               {activeDetail === 'integrations' && (
@@ -80,11 +91,12 @@ const ResourcesPage: React.FC<Props> = ({ onNavigate }) => {
                   <h3>Integrations</h3>
                   <p>Connect commonly used apps in minutes. Pre-built connectors for Slack, Google Workspace, ADP, and many payroll providers.</p>
                   <ul>
-                    <li>Slack: notifications & approvals</li>
-                    <li>Google Workspace: single sign-on</li>
-                    <li>Payroll providers: export & sync</li>
+                    <li><strong>Slack:</strong> Notifications & approvals</li>
+                    <li><strong>Google Workspace:</strong> Single sign-on</li>
+                    <li><strong>Payroll providers:</strong> Export & sync data</li>
+                    <li><strong>Custom integrations:</strong> Use our API</li>
                   </ul>
-                  <div className="detail-actions"><Button onClick={() => { setActiveDetail(null); onNavigate('/features'); }} className="primary">Explore integrations</Button></div>
+                  <div className="detail-actions"><Button onClick={() => { setActiveDetail(null); onNavigate('/features'); }} className="primary">Explore Features</Button></div>
                 </>
               )}
               {activeDetail === 'security' && (
@@ -92,11 +104,13 @@ const ResourcesPage: React.FC<Props> = ({ onNavigate }) => {
                   <h3>Security</h3>
                   <p>Security is our priority. We offer role-based access, audit logs, and SOC2-compliant processes.</p>
                   <ul>
-                    <li>Role-based access controls</li>
-                    <li>Two-factor authentication</li>
-                    <li>Enterprise audit logs</li>
+                    <li>Role-based access controls (RBAC)</li>
+                    <li>Two-factor authentication (2FA)</li>
+                    <li>Enterprise audit logs & tracking</li>
+                    <li>SOC2 & ISO 27001 compliance</li>
+                    <li>Encryption at rest and in transit</li>
                   </ul>
-                  <div className="detail-actions"><Button onClick={() => { setActiveDetail(null); openConfirm(() => window.open('https://example.com/security-whitepaper.pdf', '_blank'), 'View security', 'Download security whitepaper?'); }} className="primary">View whitepaper</Button></div>
+                  <div className="detail-actions"><Button onClick={() => setActiveDetail(null)} className="primary">Back to Resources</Button></div>
                 </>
               )}
             </div>
@@ -105,5 +119,7 @@ const ResourcesPage: React.FC<Props> = ({ onNavigate }) => {
     </Box>
   );
 };
+
+
 
 export default ResourcesPage;

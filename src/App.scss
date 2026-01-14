@@ -1,4 +1,4 @@
-// Variables
+
 $font-primary: 'Poppins', 'Segoe UI', sans-serif;
 $headline-color: #1a1a1a;
 $subtext-color: #060000;
@@ -8,7 +8,7 @@ $box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
 $main-icon-bg: linear-gradient(145deg, #a78bfa, #7c3aed);
 $icon-size: 90px;
 
-// Global Styles
+
 img {
   width: 100px;
   height: 100px;
@@ -45,7 +45,7 @@ body, p, span, li, h1, h2, h3, h4, h5 {
   margin-top: 20px;
   background-color: rgb(255,255,255);
   border: 2px solid rgb(9, 0, 0);
-  border-radius: 25px; // updated to have curved top/bottom, flat sides
+  border-radius: 25px; 
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
   font-family: 'Inter', system-ui, sans-serif;
   width: 72%;
@@ -101,7 +101,7 @@ body, p, span, li, h1, h2, h3, h4, h5 {
       font-size: 0.88rem;
       color: #000;
       background: #fff;
-      border: 1.5px solid #d1d5db; // subtle gray border
+      border: 1.5px solid #d1d5db; 
       padding: 0.50rem 1.25rem;
       border-radius: 12px;
       font-weight: 600;
@@ -135,8 +135,6 @@ body, p, span, li, h1, h2, h3, h4, h5 {
   }
 }
 
-
-// Landing Container
 .landing-container {
    padding-top: 140px; 
 
@@ -252,7 +250,7 @@ body, p, span, li, h1, h2, h3, h4, h5 {
   }
 }
 
-// Animations
+
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.98); }
   to { opacity: 1; transform: scale(1); }
@@ -279,7 +277,7 @@ body, p, span, li, h1, h2, h3, h4, h5 {
   }
 }
 
-// Responsive
+
 @media (max-width: 768px) {
   .landing-container {
     padding: 3rem 1rem;

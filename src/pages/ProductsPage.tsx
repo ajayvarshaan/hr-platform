@@ -31,7 +31,6 @@ const ProductsPage: React.FC<Props> = ({ onNavigate }) => {
   const [trialSuccess, setTrialSuccess] = useState(false);
 
   const handleGetStarted = () => {
-    // open a small interactive pop-in with options
     setGetStartedOpen(true);
   };
 

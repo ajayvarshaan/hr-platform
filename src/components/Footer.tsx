@@ -7,14 +7,12 @@ export default function Footer() {
     <Box component="footer" className="footer">
       <Container maxWidth="lg">
         <Box className="footer-content">
-          {/* Left Column */}
           <Box className="footer-col footer-description">
             <Typography variant="h6" className="footer-heading">
               Groupon is the HRM platform that builds a thriving workplace culture—all in one place.
             </Typography>
           </Box>
 
-          {/* Links */}
           <Box className="footer-col">
             <Typography className="footer-title">Product</Typography>
             <Stack spacing={1}>
@@ -42,7 +40,6 @@ export default function Footer() {
             <Typography className="footer-title">Resources</Typography>
           </Box>
 
-          {/* Social Icons */}
           <Box className="footer-col">
             <Typography className="footer-title">Follow us</Typography>
             <Box className="social-icons">

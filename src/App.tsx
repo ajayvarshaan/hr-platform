@@ -29,6 +29,7 @@ import PricingPage from './pages/PricingPage';
 import ResourcesPage from './pages/ResourcesPage';
 import SignInPage from './pages/SignInPage';
 import RequestDemoPage from './pages/RequestDemoPage';
+import LearnMorePage from './pages/LearnMorePage';
 import TransferModal from './components/TransferModal';
 
 
@@ -117,9 +118,11 @@ const App: React.FC = () => {
         <SignInPage onSignIn={() => { setIsSignedIn(true); navigate('/'); }} onNavigate={navigate} />
       ) : path === '/request-demo' ? (
         <RequestDemoPage onNavigate={navigate} />
+      ) : path === '/learn-more' ? (
+        <LearnMorePage onNavigate={navigate} />
       ) : (
         <>
-          <HeroSection />
+          <HeroSection onNavigate={navigate} />
           <BuiltForEveryone />
           <IntegrationSection />
           <TestimonialSlider />

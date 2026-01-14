@@ -1,6 +1,5 @@
 @use 'sass:math';
 
-// Animation Keyframes
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -55,7 +54,6 @@
   }
 }
 
-// Base Styles
 .section {
   padding: 80px 16px;
   background-color: rgb(242,244,245);
@@ -79,7 +77,6 @@
   line-height: 1.6;
 }
 
-// Card Layout
 .topRow {
   display: flex;
   justify-content: center;
@@ -88,7 +85,6 @@
   margin-top: 20px;
   flex-wrap: wrap;
   
-  // First two cards in top row
   .cardSmall {
     width: 320px;
     height: 410px;
@@ -96,7 +92,6 @@
     border-radius: 20px;
   }
   
-  // Third card (legal teams) - wider
   .cardWide {
     width: 400px;
     height: 400px;
@@ -121,7 +116,6 @@
 
 
   
-  // Both bottom cards equal width
   .cardSmall {
     width: 400px;
     height: 480px;
@@ -131,7 +125,6 @@
   }
 }
 
-// Card Base Styles
 .cardSmall, .cardWide ,.cardBig{
   position: relative;
   display: flex;
@@ -204,7 +197,6 @@
   margin-bottom: 20px;
 }
 
-// HR Professionals Card
 .hrCardHeader {
   display: flex;
   justify-content: space-between;
@@ -370,7 +362,7 @@
   }
 }
 
-// Managers & Leaders Card
+
 .wireCircleContainer {
   position: relative;
   width: 160px;
@@ -462,7 +454,7 @@
   font-weight: 500;
 }
 
-// Legal Teams Card - Wider Version
+
 .legalCardFlex {
   display: flex;
   justify-content: center;
@@ -614,7 +606,7 @@
   }
 }
 
-// Enhanced Employee Data Card
+
 .employeeDataCard {
   display: flex;
   flex-direction: column;
@@ -767,12 +759,11 @@
     }
   }
 }
-// Teams & Employees Card
 .circleWrapperSmall {
   position: relative;
-  width: 200px; // larger circle
+  width: 200px; 
   height: 800px;
-  margin-top:50px; // centers the circle horizontally
+  margin-top:50px;
   border-radius: 50%;
   background: linear-gradient(145deg, #f8f9fa, #e0e7ff 100%);
   box-shadow: 0 6px 24px rgba(59, 130, 246, 0.1),
@@ -804,7 +795,7 @@
   height: 52px;
   top: 70%;
   left: 50%;
-  transform: translate(-50%, -50%) rotate(0deg) translateY(-80px); // distance from center
+  transform: translate(-50%, -50%) rotate(0deg) translateY(-80px); 
   transform-origin: center;
   transition: all 0.3s ease;
   z-index: 2;

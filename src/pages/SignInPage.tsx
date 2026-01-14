@@ -13,7 +13,6 @@ const SignInPage: React.FC<Props> = ({ onSignIn, onNavigate }) => {
 
   const submit = (e?: React.FormEvent) => {
     e?.preventDefault();
-    // lightweight fake signin
     if (email && password) onSignIn();
   };
 
