@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Typography, Button, Container, Grid, Card, CardContent } from '@mui/material';
+import { Box, Typography, Button, Container, Grid as MUIGrid, Card, CardContent } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import './LearnMorePage.scss';
+
+const Grid = MUIGrid as any;
 
 interface LearnMorePageProps {
   onNavigate: (path: string) => void;
@@ -228,7 +230,7 @@ const LearnMorePage: React.FC<LearnMorePageProps> = ({ onNavigate }) => {
           </Typography>
           <Grid container spacing={3}>
             {benefits.map((benefit, idx) => (
-              <Grid item xs={12} sm={6} md={3} key={idx}>
+              <Grid key={idx} item xs={12} sm={6} md={3}>
                 <Card className={`benefit-card animate-card`} style={{ animationDelay: `${idx * 0.1}s` }}>
                   <CardContent>
                     <Typography className="benefit-number">
@@ -255,7 +257,7 @@ const LearnMorePage: React.FC<LearnMorePageProps> = ({ onNavigate }) => {
           </Typography>
           <Grid container spacing={3}>
             {features.map((feature, idx) => (
-              <Grid item xs={12} sm={6} md={4} key={feature.id}>
+              <Grid key={feature.id} item xs={12} sm={6} md={4}>
                 <Card 
                   className={`feature-card animate-card ${expandedCard === feature.id ? 'expanded' : ''}`}
                   onClick={() => setExpandedCard(expandedCard === feature.id ? null : feature.id)}
@@ -303,7 +305,7 @@ const LearnMorePage: React.FC<LearnMorePageProps> = ({ onNavigate }) => {
               { step: '03', title: 'Training', desc: 'Comprehensive training for your team members' },
               { step: '04', title: 'Go Live', desc: 'Launch your new HR system and start benefiting immediately' }
             ].map((item, idx) => (
-              <Grid item xs={12} sm={6} md={3} key={idx}>
+              <Grid key={idx} item xs={12} sm={6} md={3}>
                 <Box className={`process-card animate-card`} style={{ animationDelay: `${idx * 0.1}s` }}>
                   <Box className="step-number">{item.step}</Box>
                   <Typography variant="h6" className="step-title">{item.title}</Typography>

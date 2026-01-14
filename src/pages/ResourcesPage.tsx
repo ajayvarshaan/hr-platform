@@ -7,22 +7,7 @@ type Props = { onNavigate: (to: string) => void };
 
 const ResourcesPage: React.FC<Props> = ({ onNavigate }) => {
   const [modalOpen, setModalOpen] = useState(false);
-  const [modalAction, setModalAction] = useState<() => void>(() => () => {});
-  const [modalTitle, setModalTitle] = useState<string>('');
-  const [modalMessage, setModalMessage] = useState<React.ReactNode>('');
   const [activeDetail, setActiveDetail] = useState<string | null>(null);
-
-  const openConfirm = (action: () => void, title?: string, message?: React.ReactNode) => {
-    setModalAction(() => action);
-    setModalTitle(title || 'Confirm');
-    setModalMessage(message || 'Proceed?');
-    setModalOpen(true);
-  };
-
-  const handleConfirm = () => {
-    setModalOpen(false);
-    modalAction();
-  };
 
   return (
     <Box className="resources-page">
@@ -55,7 +40,7 @@ const ResourcesPage: React.FC<Props> = ({ onNavigate }) => {
             <Button className="small-cta" onClick={() => setActiveDetail('security')}>View security</Button>
         </article>
       </Box>
-        <TransferModal open={modalOpen} title={modalTitle} message={modalMessage} onClose={() => setModalOpen(false)} onConfirm={handleConfirm} confirmLabel="Continue" />
+        <TransferModal open={modalOpen} title="" message="" onClose={() => setModalOpen(false)} onConfirm={() => setModalOpen(false)} confirmLabel="Continue" />
 
         {activeDetail && (
           <div className="detail-pop" onClick={() => setActiveDetail(null)}>
